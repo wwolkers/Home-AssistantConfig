@@ -1,3 +1,5 @@
+####MOTION BASED####
+- !include automation/lights_wouter.yaml
 - !include automation/alarm_set_away.yaml
 - !include automation/alarm_set_sleeping.yaml
 - !include automation/alarm_trigger.yaml

@@ -55,6 +55,9 @@ lights:
     - group.bedroom
     - group.living_room
     - group.kitchen
+    - group.all_lights
+    - light.lamp_gang_level_16_0
+    - light.lamp_wouter_level_17_0
 
 media:
   name: media
@@ -182,11 +185,9 @@ Alarm Status:
    - sensor.lr_motion
    - sensor.fibaro_multisensor_motion
    - sensor.aeotec_multisensor_motion
-#   - sensor.gocontrol_motion
 
 Doors:
    - group.benext_door
-#   - sensor.gocontrol_door_1
 
 Alert:
    - script.lifx_alert
@@ -216,25 +217,11 @@ Wouter:
    - input_select.ben_status
    - sensor.google_travel_time__driving
    - sensor.car_driving_ben
-#   - binary_sensor.prius_status
-#   - binary_sensor.civic_status
    - binary_sensor.keys_status
    - sensor.destination_wouter
    - sensor.eta_wouter
    - sensor.wouter_iphone_battery
    - sensor.phone_batt_wouter
-
-#Cailin:
-#   - script.refresh_devices
-#   - switch.cr_finder
-#   - script.cr_finder
-#   - script.car_finder_cailin_notify
-#   - input_select.cailin_status
-#   - sensor.car_driving_cailin
-#   - sensor.destination_cailin
-#   - sensor.eta_cailin
-#   - sensor.cailin_nexus_6p_battery
-#   - sensor.phone_batt_cailin
 
 Global:
    - script.all_off
@@ -308,25 +295,11 @@ Fritznetmonitor:
     - sensor.fritz_netmonitor_bytes_received
 
 Living Room:
-#   - light.lr_door_color_lifx
-#   - light.lr_fireplace_color_lifx
-#   - light.osmc
    - light.woonkamer_raam
    - light.woonkamer_lamp_tv
-   - light.lamp_gang_level_16_0
-#   - input_select.hyperion_effect
-#   - switch.hyperion
-#   - switch.wemo_insight_5050_led
-#   - light.jar_led
-#   - switch.livingroom_wall_outlet
 
 #Bathroom:
 #   - light.bathroom_led
-
-#Lockouts:
-#   - input_select.company
-#   - input_select.lock_pc
-#   - input_select.media_lockout
 
 Devices:
    - switch.pc_power
