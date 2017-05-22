@@ -1,0 +1,10 @@
+  alias: 'Notify alarm state changes'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.alarm
+  action:
+    - service: notify.telegram
+      data_template:
+        message: "Alarm changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state }}"
+

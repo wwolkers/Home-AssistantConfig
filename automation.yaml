@@ -1,0 +1,78 @@
+- !include automation/alarm_set_away.yaml
+- !include automation/alarm_set_sleeping.yaml
+- !include automation/alarm_trigger.yaml
+####PRESENCE BASED####
+- !include automation/away.yaml
+- !include automation/home_night_time.yaml
+- !include automation/home_day_time.yaml
+- !include automation/cmstormtrooper_on_home.yaml
+- !include automation/cmstormtrooper_off_away.yaml
+- !include automation/cmstormtrooper_off_sleeping.yaml
+- !include automation/car_finder_ben.yaml
+- !include automation/car_finder_cailin.yaml
+- !include automation/car_finder_ben_update_location.yaml
+- !include automation/car_finder_cailin_update_location.yaml
+####SLEEP BASED####
+- !include automation/bed_sleeping.yaml
+- !include automation/cailin_sleeping.yaml
+- !include automation/morning_not_sleeping_light.yaml
+- !include automation/morning_not_sleeping_dark.yaml
+- !include automation/morning_not_sleeping_dark_one.yaml
+####SUN BASED####
+- !include automation/sunrise_blinds.yaml
+- !include automation/sunset_all_on_not_cloudy.yaml
+- !include automation/sunset_all_on_cloudy.yaml
+- !include automation/sunset_blinds_closed_cloudy.yaml
+- !include automation/sunset_blinds_closed_not_cloudy.yaml
+####MEDIA BASED####
+- !include automation/media_playing_night.yaml
+- !include automation/media_playing_day.yaml
+- !include automation/media_stopped_night.yaml
+- !include automation/media_stopped_day.yaml
+####NOTIFICATION####
+- !include automation/update_availible.yaml
+- !include automation/owntracks_refresh.yaml
+####SENSOR BASED####
+- !include automation/motion_night.yaml
+- !include automation/motion_bathroom.yaml
+- !include automation/low_battery.yaml
+- !include automation/clap_bedtime.yaml
+- !include automation/clap_morning.yaml
+- !include automation/driving_ben_start.yaml
+- !include automation/driving_ben_stop.yaml
+####INPUT SELECT####
+#- !include automation/lullaby.yaml
+####PARTY BUTTON####
+- !include automation/party_button_restart_ha.yaml
+- !include automation/party_button_party_over.yaml
+- !include automation/party_button_party_time.yaml
+- !include automation/party_button_all_off.yaml
+- !include automation/party_button_sexy_time.yaml
+####HYPERION AUTOMATIONS####
+- !include automation/hyperion_mood_blobs_blue.yaml
+- !include automation/hyperion_knight_rider.yaml
+- !include automation/hyperion_mood_blobs_cold.yaml
+- !include automation/hyperion_mood_blobs_full_color.yaml
+- !include automation/hyperion_mood_blobs_green.yaml
+- !include automation/hyperion_mood_blobs_red.yaml
+- !include automation/hyperion_mood_blobs_warm.yaml
+- !include automation/hyperion_rainbow_mood.yaml
+- !include automation/hyperion_rainbow_swirl.yaml
+- !include automation/hyperion_snake.yaml
+- !include automation/hyperion_strobe_blue.yaml
+- !include automation/hyperion_strobe_white.yaml
+- !include automation/hyperion_strobe_raspberry.yaml
+- !include automation/hyperion_off.yaml
+- !include automation/hyperion_color_traces.yaml
+- !include automation/hyperion_snake.yaml
+- !include automation/hyperion_cinema_dim_lights.yaml
+- !include automation/hyperion_cinema_dim_lights.yaml
+- !include automation/hyperion_cinema_brighten_lights.yaml
+- !include automation/hyperion_police_lights_single.yaml
+- !include automation/hyperion_random.yaml
+- !include automation/hyperion_police_lights_solid.yaml
+- !include automation/hyperion_running_dots.yaml
+- !include automation/hyperion_system_shutdown.yaml
+- !include automation/hyperion_sparks_color.yaml
+- !include automation/hyperion_sparks.yaml
+- !include automation/hyperion_color_traces.yaml

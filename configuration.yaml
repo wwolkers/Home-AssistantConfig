@@ -1,0 +1,134 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 52.357958
+  longitude: 4.780472
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Amsterdam
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_api_password
+  trusted_networks:
+    - 127.0.0.1/32
+    - 192.168.16.0/24
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.rfxtrx: debug
+    rflink: debug
+    homeassistant.components.rflink: debug
+
+automation: !include_dir_list automation/
+camera: !include cameras.yaml
+group: !include groups.yaml
+sensor: !include_dir_merge_list sensors/
+script: !include_dir_named scripts/
+
+# log everything to influxdb for historical graphs
+#influxdb:
+#  host: 127.0.0.1
+#  username: hass
+#  password: !secret influxdb_password
+
+# Track the sun
+sun:
+
+climate:
+  platform: toon
+  name: Toon Thermostat
+  host: 192.168.16.16
+  port: 10080
+#  scan_interval: 10
+  
+# MQTT setup
+mqtt:
+  broker: 192.168.16.5
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  protocol: 3.1
+
+
+# Example configuration.yaml entry
+notify: !include notify.yaml
+
+# Owntracks configuration
+device_tracker:
+  - platform: owntracks
+  - platform: fritz
+  - platform: aruba
+    host: 192.168.16.52
+    username: !secret aruba_username
+    password: !secret aruba_password
+  
+# OpenZWave
+zwave:
+  usb_path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+  device_config: !include zwave_device_config.yaml
+  
+# RFXCom
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1Y0QAVS-if00-port0
+  debug: true
+  
+# Yamaha receiver
+media_player:
+  - platform: yamaha
+# Sony TV with Android
+  - platform: cast
+  - platform: spotify
+    client_id: ac4d5f695b184a8c97eba12fec803afe
+    client_secret: 5bc6e3b155b144c89a69fe39e28b70c1
+
+homematic:
+  hosts:
+    wireless:
+      ip: 127.0.0.1
+      resolvenames: metadata
+
+shell_command: !include shell_commands.yaml
+
+switch:
+  platform: rfxtrx
+  automatic_add: true
+  
+light:
+  platform: rfxtrx
+  automatic_add: true
+  
+zone: !include zones.yaml
+weblink: !include weblinks.yaml
+
+config:
+
+rflink:
+  port: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_95432313837351C061B2-if00

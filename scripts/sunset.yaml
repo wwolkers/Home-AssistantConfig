@@ -1,0 +1,11 @@
+  sequence:
+  - event: LOGBOOK_ENTRY
+    event_data:
+      name: EVENT
+      message: SUNSET blinds closed
+  - service: notify.notify
+    data:
+      message: "The sun is setting. Closing blinds."
+  - service: switch.turn_off
+    data:
+      entity_id: group.brawler

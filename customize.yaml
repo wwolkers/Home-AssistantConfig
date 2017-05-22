@@ -1,0 +1,445 @@
+########CUSTOMIZE DEVICES########
+#     device_tracker.cailin6p_cailin6p:
+#        entity_picture: /local/cailin.jpg
+#        friendly_name: Cailin
+     device_tracker.owntracks_iphone_wouter:
+        entity_picture:  /local/wouter.jpg
+        friendly_name: Wouter
+
+######CUSTOMIZE MEDIA PLAYERS######
+#     media_player.bcrcc:
+#        friendly_name: Chromecast
+
+#######CUSTOMIZE SWITCHES########
+####RF####	
+#     switch.bedroom_blinds:
+#        friendly_name: Bedroom Blinds
+#        icon: mdi:blinds
+#     switch.bedroom_fan:
+#        friendly_name: Bedroom Fan
+#        icon: mdi:fan
+#     switch.bedroom_lamp:
+#        friendly_name: Nightstand Lamp
+#        icon: mdi:lightbulb-outline
+#     switch.kitchen_blinds:
+#        friendly_name: Kitchen Blinds
+#        icon: mdi:blinds
+#     switch.kitchen_outlet:
+#        friendly_name: Outlet
+#        icon: mdi:power-socket
+#     switch.livingroom_blinds:
+#        friendly_name: Living Room Blinds
+#        icon: mdi:blinds
+#     switch.livingroom_wall_outlet:
+#        friendly_name: Fan
+#        icon: mdi:fan
+#     switch.livingroom_desk_outlet:
+#        friendly_name: Party Globe
+#        icon: mdi:cake
+####MEDIA####
+#     switch.pc_power:
+#        friendly_name: Computer Homes
+#        icon: mdi:monitor
+#     switch.pc_wol:
+#        friendly_name: Computer
+#        icon: mdi:monitor
+#     switch.tv_input:
+#        friendly_name: TV Input
+#        icon: mdi:television-guide
+#     switch.tv_power:
+#        friendly_name: TV
+#        icon: mdi:television
+#     switch.avr_power:
+#        friendly_name: AVR Power
+#        icon: mdi:television
+####LIGHTS####
+#     switch.livingroom_lifx:
+#        icon: mdi:lightbulb
+#        friendly_name: "LR LIFX IFTTT"
+#     switch.bedroom_lifx:
+#        icon: mdi:lightbulb
+#        friendly_name: "BR LIFX IFTTT"
+#     switch.wemo_insight_5050_led:
+#        friendly_name: Wemo Insight
+#        icon: mdi:led-outline
+####ZWAVE Devices####
+#############Go Control Door####
+#     sensor.gocontrol_door_sensor_1_alarm_level_7:
+#        icon: mdi:door
+#        friendly_name: "Back Door Sensor"
+#     sensor.gocontrol_door_sensor_1_alarm_type_7:
+#        hidden: true
+#     sensor.gocontrol_door_sensor_1_burglar_7:
+#        hidden: true
+#     sensor.gocontrol_door_sensor_1_sourcenodeid_7:
+#        hidden: true
+#     sensor.gocontrol_door_sensor_2_alarm_level_8:
+#        icon: mdi:door
+#        friendly_name: "Front Door Sensor"
+#     sensor.gocontrol_door_sensor_2_alarm_type_8:
+#        hidden: true
+#     sensor.gocontrol_door_sensor_2_burglar_8:
+#        hidden: true
+#     sensor.gocontrol_door_sensor_2_sourcenodeid_8:
+#        hidden: true
+##############Go Control PIR####
+#     sensor.gocontrol_pir_1_alarm_level_6:
+#        icon: mdi:security
+#        friendly_name: "GoControl PIR Sensor"
+#     sensor.gocontrol_pir_1_alarm_type_6:
+#        hidden: true
+#     sensor.gocontrol_pir_1_burglar_6:
+#        hidden: true
+#     sensor.gocontrol_pir_1_sourcenodeid_6:
+#        hidden: true
+#     sensor.gocontrol_pir_1_temperature_6:
+#        icon: mdi:thermometer
+#        friendly_name: "GoControl PIR Temperature"
+#     binary_sensor.fibaro_multisensor_sensor_4:
+#        hidden: true
+#     binary_sensor.gocontrol_door_sensor_1_sensor_7:
+#        hidden: true
+#     binary_sensor.gocontrol_door_sensor_2_sensor_8:
+#        hidden: true
+#     binary_sensor.gocontrol_pir_1_sensor_6:
+#        hidden: true
+##############AEOTEC####
+#     sensor.aeotec_multisensor_6_burglar_3:
+#        friendly_name: "Living Room Motion Aeotec"
+#        icon: mdi:security
+#     sensor.aeotec_multisensor_6_luminance_3:
+#        friendly_name: "Living Room Aeotec"
+#        icon: mdi:brightness-7
+#     sensor.aeotec_multisensor_6_relative_humidity_3:
+#        friendly_name: "Living Room Aeotec"
+#        icon: mdi:water
+#     sensor.aeotec_multisensor_6_temperature_3:
+#        friendly_name: "Living Room Aeotec"
+#        icon: mdi:thermometer
+#     sensor.aeotec_multisensor_6_ultraviolet_3:
+#        friendly_name: "Living Room  UV Aeotec"
+###############Fibaro####
+#     sensor.fibaro_multisensor_burglar_4:
+#        friendly_name: "Kitchen Motion Fibaro"
+#        icon: mdi:security
+#     sensor.fibaro_multisensor_luminance_4:
+#        friendly_name: "Kitchen Fibaro"
+#        icon: mdi:brightness-7
+#     sensor.fibaro_multisensor_temperature_4:
+#        friendly_name: "Kitchen Fibaro"
+#        icon: mdi:thermometer
+#####LIGHTS####
+     light.lamp_gang_level_5_0:
+       friendly_name: "Lamp Gang"
+#     light.osmc:
+#        friendly_name: Hyperion RGB LEDs
+#        icon: mdi:led-outline
+#     light.br_node_led:
+#        friendly_name: Bedroom Node Led
+#        icon: mdi:led-outline
+#     light.jar_led:
+#        friendly_name: Jar LED
+#        icon: mdi:led-outline
+#     light.party_button:
+#        friendly_name:  Party Button LED
+#        icon: mdi:led-outline
+#     light.lr_door_color_lifx:
+#        friendly_name:  Front Door LIFX
+#     light.lr_fireplace_color_lifx:
+#        friendly_name:  Fireplace LIFX
+#     light.br_lifx:
+#        friendly_name:  Bedroom LIFX
+#####MISC####
+
+########CUSTOMIZE SENSORS########
+####WEATHER####
+     sensor.dark_sky_cloud_coverage:
+        friendly_name: Cloud Coverage
+        icon: mdi:cloud
+     sensor.dark_sky_humidity:
+        friendly_name: Outdoor
+        icon: mdi:water
+     sensor.dark_sky_pressure:
+        friendly_name: Barometric Pressure
+        icon: mdi:nature
+     sensor.dark_sky_temperature:
+        icon: mdi:thermometer
+        friendly_name: Outdoor
+     sensor.dark_sky_wind_speed:
+        icon: mdi:weather-windy
+        friendly_name: Wind Speed
+     sensor.dark_sky_summary:
+        friendly_name: Condition
+     sensor.dark_sky_ozone:
+        friendly_name: Ozone
+     sensor.dark_sky_precip_probability:
+        friendly_name: Precipitation Probability
+     sensor.dark_sky_precip:
+        friendly_name: Precipitation Type
+     sensor.dark_sky_precip_intensity:
+        friendly_name: Precipitation Intensity
+     sensor.dark_sky_visibility:
+        friendly_name: Visibility
+     sensor.dark_sky_nearest_storm:
+        friendly_name: Nearest Storm
+     sensor.dark_sky_wind_bearing:
+        friendly_name: Wind Bearing
+        icon: mdi:compass
+     sensor.dark_sky_apparent_temperature:
+        friendly_name: Real Feel
+####ESP MQTT####
+     sensor.lr_motion:
+        friendly_name: "Living Room Motion"
+        icon: mdi:security
+     sensor.lr_humidity:
+        friendly_name: "Living Room"
+        icon: mdi:water
+     sensor.lr_temperature:
+        friendly_name: "Living Room"
+        icon: mdi:thermometer
+     sensor.lr_light:
+        friendly_name: "Living Room"
+        icon: mdi:brightness-7
+     sensor.br_motion:
+        friendly_name: "Bedroom Motion"
+        icon: mdi:security
+     sensor.br_humidity:
+        friendly_name: "Bedroom"
+        icon: mdi:water
+     sensor.br_temperature:
+        friendly_name: "Bedroom"
+        icon: mdi:thermometer
+     sensor.br_light:
+        friendly_name: "Bedroom"
+        icon: mdi:brightness-7
+     sensor.btr_motion:
+        friendly_name: "Bathroom Motion"
+        icon: mdi:security
+     sensor.btr_humidity:
+        friendly_name: "Bathroom"
+        icon: mdi:water
+     sensor.btr_temperature:
+        friendly_name: "Bathroom"
+        icon: mdi:thermometer
+     sensor.btr_light:
+        friendly_name: "Bathroom"
+        icon: mdi:brightness-7
+     sensor.br_last_sound:
+        friendly_name: "Bedroom Last Sound"
+        icon: mdi:surround-sound
+     sensor.br_clap_sound:
+        friendly_name: "Bedroom Clap Detector"
+        icon: mdi:surround-sound
+     sensor.party_button:
+        friendly_name: "Party Button Status"
+        icon: mdi:cake
+####MQTT TASKER####
+     input_select.ben_status:
+        friendly_name: "Ben's Status"
+     sensor.eta_ben:
+        icon: mdi:map
+        friendly_name: "Ben's ETA"
+     sensor.destination_ben:
+        icon: mdi:map-marker
+        friendly_name: "Ben's Destination"
+     input_select.cailin_status:
+        friendly_name: "Cailin's Status"
+     sensor.eta_cailin:
+        icon: mdi:map
+        friendly_name: "Cailin's ETA"
+     sensor.destination_cailin:
+        icon: mdi:map-marker
+        friendly_name: "Cailin's Destination"
+     sensor.ben_nexus_6p_battery:
+        icon: mdi:battery
+        friendly_name: "Ben's Nexus 6P Battery"
+     sensor.cailin_nexus_6p_battery:
+        icon: mdi:battery
+        friendly_name: "Cailin's Nexus 6P Battery"
+####MISC####
+     sensor.date__time:
+        icon: mdi:calendar-clock
+     sensor.cpu_use:
+        icon: mdi:speedometer
+     sensor.ram_free:
+        icon: mdi:poll
+     sensor.disk_free_home:
+        icon: mdi:folder
+        friendly_name: "Free /"
+     sensor.disk_free_storage:
+        icon: mdi:folder
+        friendly_name: "Free /storage"
+     sensor.last_boot:
+        icon: mdi:clock-start
+     sensor.speedtest_ping:
+        icon: mdi:clock
+        friendly_name: "Ping"
+     sensor.speedtest_download:
+        icon: mdi:arrow-down
+        friendly_name: "Download"
+     sensor.speedtest_upload:
+        icon: mdi:arrow-up
+        friendly_name: "Upload"
+########CUSTOMIZE SCRIPTS########
+     script.morning:
+        hidden: true
+     script.alarmaway:
+        hidden: true
+     script.alarmhome:
+        hidden: true
+     script.sunrise:
+        hidden: true
+     script.sunset:
+        hidden: true
+     script.bedtime_cailin:
+        hidden: true
+     script.bedtime_ben:
+        hidden: true
+     script.all_on:
+        friendly_name: "All On"
+        icon: mdi:toggle-switch
+     script.all_on_day:
+        hidden: true
+     script.all_off:
+        friendly_name: "All Off"
+        icon: mdi:toggle-switch-off
+     script.alarmtriggered:
+        hidden: true
+     script.motionlightlr:
+        hidden: true
+     script.timer_lr:
+        hidden: true
+     script.test:
+        hidden: true
+     script.test2:
+        hidden: true
+     script.notifyupdate:
+        hidden: true
+     script.vol_up:
+        hidden: true
+     script.vol_down:
+        hidden: true
+     script.lifx_alert:
+        hidden: true
+     script.lowbattery:
+        hidden: true
+     script.alarmclockmorning:
+        hidden: true
+     script.restart_ha:
+        icon: mdi:power
+        friendly_name: "Restart Home Assistant"
+     script.refresh_devices:
+        friendly_name: "Refresh Device Loc/Bat"
+#     script.party_time:
+#        friendly_name: "Start Party"
+#        icon: mdi:cake
+#     script.party_over:
+#        friendly_name: "Stop Party"
+#        icon: mdi:emoticon-sad
+#     script.party_lights_1:
+#        hidden: true
+#     script.party_lights_2:
+#        hidden: true
+#     script.sexy_time:
+#        friendly_name: "Sexy Time"
+#        icon: mdi:human-male-female
+#     script.alarmred:
+#        friendly_name: "Alarm Red"
+#        icon: mdi:alert
+#     script.morning_dark:
+#        hidden: true
+#     script.media_playing_night:
+#        friendly_name: "Media Playing Night"
+#        icon: mdi:play
+#     script.media_stopped_night:
+#        friendly_name: "Media Stopped Night"
+#        icon: mdi:stop
+#     script.br_finder:
+#        friendly_name: "Ben's Phone Finder"
+#        icon: mdi:bell-ring
+#     script.cr_finder:
+#        friendly_name: "Cailin's Phone Finder"
+#        icon: mdi:bell-ring
+#     script.car_finder_ben_notify:
+#        friendly_name:  "Request Car Location"
+#        icon: mdi:map
+#     script.car_finder_cailin_notify:
+#        friendly_name: "Request Car Location"
+#        icon: mdi:map
+########CUSTOMIZE SCENES########
+     scene.vol_up:
+        icon: mdi:volume-high
+        friendly_name: Volume Up
+     scene.vol_down:
+        icon: mdi:volume-low
+        friendly_name: Volume Down
+#     scene.blinds_open:
+#        icon: mdi:blinds
+#     scene.blinds_close:
+#        icon: mdi:blinds
+#     scene.start:
+#        friendly_name: "Start Everything"
+#        icon: mdi:power
+#     scene.shutdown:
+#        friendly_name: "Shutdown Everything"
+#        icon: mdi:power
+#     scene.night_time:
+#        friendly_name: "Night Time"
+#        icon: mdi:power
+#     scene.lifx_alert:
+#        icon: mdi:alert
+#        friendly_name: LIFX Alert
+########CUSTOMIZE SCENES########
+#     input_select.company:
+#        icon: mdi:account-multiple-plus
+#     input_select.hyperion_effect:
+#        icon: mdi:fire
+#        friendly_name: Hyperion Effect
+#     input_select.lock_pc:
+#        icon: mdi:lock
+#     input_select.media_lockout:
+#        icon: mdi:lock
+
+########CUSTOMIZE SHELL COMMANDS########
+#     shell_command.ben6p_update:
+#       friendly_name: Ben6P Update
+#    shell_command.cailin6p_update:
+#       friendly_name: Cailin6P Update
+
+# Oregon sensors:
+# Oregon Wouter:
+     sensor.oregontemphygro_2c75_bat:
+        friendly_name: "Kamer Wouter Battery"
+     sensor.oregontemphygro_2c75_hstatus:
+        friendly_name: "Kamer Wouter Sensro Status"
+     sensor.oregontemphygro_2c75_hum:
+        friendly_name: "Kamer Wouter Humidity"
+     sensor.oregontemphygro_2c75_temp:
+        friendly_name: "Kamer Wouter Temperature"
+# Oregon Badkamer:
+     sensor.oregontemphygro_2ccc_bat:
+        friendly_name: "Badkamer Battery"
+     sensor.oregontemphygro_2ccc_hstatus:
+        friendly_name: "Badkamer Sensor Status"
+     sensor.oregontemphygro_2ccc_hum:
+        friendly_name: "Badkamer Humidity"
+     sensor.oregontemphygro_2ccc_temp:
+        friendly_name: "Badkamer Temperature"
+# Oregon Slaapkamer:
+     sensor.oregontemphygro_2cec_bat:
+        friendly_name: "Slaapkamer Battery"
+     sensor.oregontemphygro_2cec_hstatus:
+        friendly_name: "Slaapkamer Sensor Status"
+     sensor.oregontemphygro_2cec_hum:
+        friendly_name: "Slaapkamer Humidity"
+     sensor.oregontemphygro_2cec_temp:
+        friendly_name: "Slaapkamer Temperature"
+# Oregon Schuur:
+     sensor.oregontemphygro_cc7a_bat:
+        friendly_name: "Schuur Battery"
+     sensor.oregontemphygro_cc7a_hstatus:
+        friendly_name: "Schuur Sensor Status"
+     sensor.oregontemphygro_cc7a_hum:
+        friendly_name: "Schuur Humidity"
+     sensor.oregontemphygro_cc7a_temp:
+        friendly_name: "Schuur Temperature"

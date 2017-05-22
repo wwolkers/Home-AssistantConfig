@@ -1,0 +1,15 @@
+  - platform: toon_smartmeter
+    host: 192.168.16.16
+    port: 10080
+    scan_interval: 10
+    resources:
+      - gasused
+      - gasusedcnt
+      - elecusageflowlow
+      - elecusagecntlow
+      - elecusageflowhigh
+      - elecusagecnthigh
+      - elecprodflowlow
+      - elecprodcntlow
+      - elecprodflowhigh
+      - elecprodcnthigh

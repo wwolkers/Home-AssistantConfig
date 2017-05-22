@@ -1,0 +1,17 @@
+- name: Work - Kraton Almere
+  latitude: 52.348302
+  longitude: 5.182163
+  radius: 250
+  icon: mdi:domain
+  
+- name: Work - KICA
+  latitude: 52.389840
+  longitude: 4.902876
+  radius: 250
+  icon: mdi:domain
+
+- name: Work - Kraton Amsterdam
+  latitude: 52.341574
+  longitude: 4.823868
+  radius: 250
+  icon: mdi:domain

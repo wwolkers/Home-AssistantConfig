@@ -1,0 +1,371 @@
+default_view:
+ view: yes
+ entities:
+   - device_tracker.iphonewouter
+   - device_tracker.owntracks_iphone_wouter
+   - group.alarm_status
+   - group.bathroom
+   - group.bedroom
+   - group.living_room
+   - group.kitchen
+   - climate.toon_thermostat
+   - group.cameras
+   - camera.wouter
+
+alarm:
+  name: Alarm
+  view: yes
+  entities:
+    - group.alarm_status
+    - group.alert
+    - group.doors
+#    - group.cameras
+    - group.party
+
+#blinds:
+#  name: blinds
+#  view: yes
+#  entities:
+#    - group.brawler
+
+environment:
+  name: environment
+  view: yes
+  entities:
+    - group.temperature
+    - group.humidity
+    - group.light
+    - group.sound
+    - group.weather
+
+Family:
+  name: family
+  view: yes
+  entities:
+    - group.wouter
+    - group.ana
+    - device_tracker.wouter_iphone
+    - device_tracker.ana_iphone
+
+lights:
+  name: lights
+  view: yes
+  entities:
+    - group.bathroom
+    - group.bedroom
+    - group.living_room
+    - group.kitchen
+
+media:
+  name: media
+  view: yes
+  entities:
+    - group.devices
+
+scenes:
+  name: Scenes
+  view: yes
+  entities:
+    - group.global
+
+
+ha_status:
+  name: HA Controls
+  view: yes
+  entities:
+    - group.home_assistant_status
+    - group.speedtest
+    - group.lockouts
+    - group.fritznetmonitor
+
+zwave:
+  name: ZWave
+  view: yes
+  entities:
+    - group.unknown_sensor
+    - group.fibaro_wall_plug
+    - group.fibaro_dimmer
+    - group.aeotec_motion_sensor
+    - group.benext_door
+    - group.benext_dimmer
+    - group.neocool_water
+
+####GROUPS####
+
+##ZWave##
+Unknown sensor:
+   - binary_sensor.__sensor_6_0
+   - binary_sensor.__sensor_9_0
+   - switch.popp__duwi_zw_zs_3500_plugin_switch_switch_10_0
+   - binary_sensor.__sensor_11_0
+   - binary_sensor.__sensor_12_0
+   - light.__level_14_0
+   - binary_sensor.__sensor_15_0
+   - binary_sensor.__sensor_25_0
+
+Benext sensors:
+   - group.benext_motion
+   - group.benext_door
+   - group.benext_dimmer
+
+BeNext dimmer:
+   - light.lamp_wouter_level_17_0
+   - sensor.lamp_wouter_energy_17_0
+   - sensor.lamp_wouter_exporting_17_32
+   - sensor.lamp_wouter_interval_17_2
+   - sensor.lamp_wouter_power_17_8
+   - sensor.lamp_wouter_previous_reading_17_1
+
+BeNext motion:
+   - binary_sensor.benext_dhszwsnmt01_multi_sensor_sensor_3_0
+   - sensor.benext_dhszwsnmt01_multi_sensor_alarm_level_3_1
+   - sensor.benext_dhszwsnmt01_multi_sensor_alarm_type_3_0
+   - sensor.benext_dhszwsnmt01_multi_sensor_luminance_3_3
+   - sensor.benext_dhszwsnmt01_multi_sensor_temperature_3_1
+   - binary_sensor.benext_molite_sensor_sensor_4_0
+   - sensor.benext_molite_sensor_alarm_level_4_1
+   - sensor.benext_molite_sensor_alarm_type_4_0
+   - sensor.benext_molite_sensor_temperature_4_1
+
+BeNext Door:
+   - sensor.benext_door_sensor_alarm_level_2_1
+   - sensor.benext_door_sensor_alarm_type_2_0
+   - sensor.benext_door_sensor_temperature_2_1
+   - binary_sensor.benext_door_sensor_sensor_2_0
+
+Fibaro dimmer:
+   - light.lamp_gang_level_16_0
+   
+Fibaro Wall plug:
+   - switch.fibaro_system_fgwpe_wall_plug_switch_7_0
+   - sensor.fibaro_system_fgwpe_wall_plug_power_7_4
+   - sensor.fibaro_system_fgwpe_wall_plug_unknown_7_0
+   - switch.fibaro_system_fgwpe_wall_plug_switch_8_0
+   - sensor.fibaro_system_fgwpe_wall_plug_power_8_4
+   - sensor.fibaro_system_fgwpe_wall_plug_energy_8_0
+   - sensor.fibaro_system_fgwpe_wall_plug_exporting_8_32
+   - sensor.fibaro_system_fgwpe_wall_plug_power_8_8
+   
+Fibaro MultiSensor:
+   - binary_sensor.fibaro_multisensor_sensor_4
+   - sensor.fibaro_multisensor_alarm_level_4
+   - sensor.fibaro_multisensor_alarm_type_4
+   - sensor.fibaro_multisensor_burglar_4
+   - sensor.fibaro_multisensor_luminance_4
+   - sensor.fibaro_multisensor_seismic_intensity_4
+   - sensor.fibaro_multisensor_sourcenodeid_4
+   - sensor.fibaro_multisensor_temperature_4
+
+Aeotec Motion sensor:
+   - binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+   - sensor.aeotec_dsb05_multisensor_luminance_6_3
+   - sensor.aeotec_dsb05_multisensor_relative_humidity_6_5
+   - sensor.aeotec_dsb05_multisensor_temperature_6_1
+
+NeoCool water:
+   - binary_sensor.watersensor_wasmachine_sensor_18_0
+   - sensor.watersensor_wasmachine_alarm_level_18_1
+   - sensor.watersensor_wasmachine_alarm_type_18_0
+   - sensor.watersensor_wasmachine_flood_18_8
+   - sensor.watersensor_wasmachine_sourcenodeid_18_2
+   - binary_sensor.watersensor_vaatwasser_sensor_19_0
+   - sensor.watersensor_vaatwasser_alarm_level_19_1
+   - sensor.watersensor_vaatwasser_alarm_type_19_0
+   - sensor.watersensor_vaatwasser_flood_19_8
+   - sensor.watersensor_vaatwasser_sourcenodeid_19_2
+
+####Everything Else####
+Alarm Status:
+   - alarm_control_panel.alarm
+   - sensor.br_motion
+   - sensor.btr_motion
+   - sensor.lr_motion
+   - sensor.fibaro_multisensor_motion
+   - sensor.aeotec_multisensor_motion
+#   - sensor.gocontrol_motion
+
+Doors:
+   - group.benext_door
+#   - sensor.gocontrol_door_1
+
+Alert:
+   - script.lifx_alert
+
+Bedroom:
+   - switch.bedroom_fan
+   - switch.bedroom_lamp
+   - light.bedroom_color_lifx
+   - light.br_lifx
+   - switch.bedroom_lifx
+   - light.br_node_led
+
+Brawler: 
+   - switch.bedroom_blinds
+   - switch.kitchen_blinds
+   - switch.livingroom_blinds
+
+Cameras:
+    - camera.front_door
+    - camera.porch
+    - camera.wouter
+
+Wouter:
+   - script.refresh_devices
+   - script.br_finder
+   - script.car_finder_ben_notify
+   - input_select.ben_status
+   - sensor.google_travel_time__driving
+   - sensor.car_driving_ben
+#   - binary_sensor.prius_status
+#   - binary_sensor.civic_status
+   - binary_sensor.keys_status
+   - sensor.destination_wouter
+   - sensor.eta_wouter
+   - sensor.wouter_iphone_battery
+   - sensor.phone_batt_wouter
+
+#Cailin:
+#   - script.refresh_devices
+#   - switch.cr_finder
+#   - script.cr_finder
+#   - script.car_finder_cailin_notify
+#   - input_select.cailin_status
+#   - sensor.car_driving_cailin
+#   - sensor.destination_cailin
+#   - sensor.eta_cailin
+#   - sensor.cailin_nexus_6p_battery
+#   - sensor.phone_batt_cailin
+
+Global:
+   - script.all_off
+   - script.all_on
+   - script.sexy_time
+   - script.prayer_time
+   - script.party_time
+   - script.party_over
+   - script.media_playing_night
+   - script.media_stopped_night
+   - scene.startup
+   - scene.shutdown
+   - scene.night_time
+   - input_select.lullaby
+   - script.IFTTT
+
+Home Assistant Status:
+   - script.restart_ha
+   - sensor.cpu_use
+   - sensor.ram_free
+   - sensor.disk_free_home
+   - sensor.disk_free_storage
+   - sensor.last_boot
+
+Humidity:
+   - sensor.dark_sky_humidity
+   - sensor.vair_sensor_1_humidity
+   - sensor.br_humidity
+   - sensor.btr_humidity
+   - sensor.lr_humidity
+   - sensor.aeotec_multisensor_6_relative_humidity_3
+   - sensor.oregontemphygro_cc7a_hum
+   - sensor.oregontemphygro_2cec_hum
+   - sensor.oregontemphygro_2ccc_hum
+   - sensor.oregontemphygro_2c75_hum
+ 
+Kitchen:
+    - switch.kitchen_outlet
+   
+Light:
+   - sensor.br_light
+   - sensor.btr_light
+   - sensor.lr_light
+   - sensor.aeotec_multisensor_6_luminance_3
+   - sensor.aeotec_multisensor_6_ultraviolet_3
+   - sensor.fibaro_multisensor_motion_sensor_luminance_4
+
+Party:
+   - light.party_button
+   - sensor.party_button
+   - switch.livingroom_desk_outlet
+ 
+#Sound:
+#   - sensor.br_last_sound
+#   - sensor.br_clap_sound
+
+Speedtest:
+   - sensor.speedtest_ping
+   - sensor.speedtest_download
+   - sensor.speedtest_upload
+
+Fritznetmonitor:
+  name: FritzBox
+  entities:
+    - sensor.fritz_netmonitor
+    - sensor.fritz_netmonitor_is_connected
+    - sensor.fritz_netmonitor_wan_access_type
+    - sensor.fritz_netmonitor_external_ip
+    - sensor.fritz_netmonitor_uptime
+    - sensor.fritz_netmonitor_bytes_sent
+    - sensor.fritz_netmonitor_bytes_received
+
+Living Room:
+#   - light.lr_door_color_lifx
+#   - light.lr_fireplace_color_lifx
+#   - light.osmc
+   - light.woonkamer_raam
+   - light.woonkamer_lamp_tv
+   - light.lamp_gang_level_16_0
+#   - input_select.hyperion_effect
+#   - switch.hyperion
+#   - switch.wemo_insight_5050_led
+#   - light.jar_led
+#   - switch.livingroom_wall_outlet
+
+#Bathroom:
+#   - light.bathroom_led
+
+#Lockouts:
+#   - input_select.company
+#   - input_select.lock_pc
+#   - input_select.media_lockout
+
+Devices:
+   - switch.pc_power
+   - switch.pc_wol
+   - switch.tv_power
+   - switch.avr_power
+   - switch.tv_input
+   - scene.vol_up
+   - scene.vol_down
+   - media_player.braviatv
+   - media_player.yamaha_receiver
+   - media_player.spotify
+
+Weather:
+   - sensor.date__time
+   - sensor.dark_sky_icon
+   - sensor.dark_sky_condition
+   - sensor.dark_sky_summary
+   - sun.sun
+   - sensor.dark_sky_cloud_coverage
+   - sensor.dark_sky_dew_point
+   - sensor.dark_sky_ozone
+   - sensor.dark_sky_precip_type
+   - sensor.dark_sky_precip_probability
+   - sensor.dark_sky_precip
+   - sensor.dark_sky_precip_intensity
+   - sensor.dark_sky_pressure
+   - sensor.dark_sky_visibility
+   - sensor.dark_sky_nearest_storm_distance
+   - sensor.dark_sky_wind_bearing
+   - sensor.dark_sky_wind_speed
+
+Temperature:
+   - sensor.dark_sky_temperature
+   - sensor.dark_sky_apparent_temperature
+   - sensor.vair_sensor_1_temperature
+   - sensor.benext_dhszwsnmt01_multi_sensor_temperature_3_1
+   - sensor.benext_molite_sensor_temperature_4_1
+   - sensor.oregontemphygro_cc7a_temp
+   - sensor.oregontemphygro_2cec_temp
+   - sensor.oregontemphygro_2ccc_temp
+   - sensor.oregontemphygro_2c75_temp
