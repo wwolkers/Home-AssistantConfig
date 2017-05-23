@@ -1,0 +1,10 @@
+  alias: 'Turn off lights after 5 minutes'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+    state: 'off'
+    for:
+      minutes: 5
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.lamp_wouter_level_17_0
