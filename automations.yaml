@@ -1,0 +1,101 @@
+- id: alarm
+  alias: 'Notify alarm state changes'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.alarm
+  action:
+    - service: notify.telegram
+      data_template:
+        message: "Alarm changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state }}"
+
+- id: lights_toilet_off
+  alias: 'Toilet: lights off after 30 seconds no motion'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.toilet_motion_sensor_21_0
+    state: 'off'
+    for:
+      seconds: 30
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.lamp_toilet_switch_20_0
+- id: lights_toilet_on
+  alias: 'Turn on/off lights based on motion and lux values'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.toilet_motion_sensor_21_0
+      state: 'on'
+    - platform: numeric_state
+      entity_id: sensor.toilet_motion_luminance_21_3
+      below: 10
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.toilet_motion_sensor_21_0
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.toilet_motion_luminance_21_3
+        below: 10
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.lamp_toilet_switch_20_0
+- id: lights_wouter_off
+  alias: 'Kamer wouter: lights off after 5 minutes no motion'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+    state: 'off'
+    for:
+      minutes: 5
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.lamp_wouter_level_17_0
+- id: lights_wouter
+  alias: 'Turn on/off lights based on motion and lux values'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+      state: 'on'
+    - platform: numeric_state
+      entity_id: sensor.aeotec_dsb05_multisensor_luminance_6_3
+      below: 10
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.aeotec_dsb05_multisensor_luminance_6_3
+        below: 10
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.lamp_wouter_level_17_0
+
+- id: owntracks_refresh
+  alias: "Owntracks Refresh"
+  trigger:
+    - platform: time
+      minutes: '/15'
+      seconds: 0
+  action:
+    service: script.refresh_devices
+- id: party_button_restart_ha
+  alias: "button restart ha"
+  trigger:
+    - platform: state
+      entity_id: sensor.party_button
+      state: "Restart HA"
+  action:
+    service: script.restart_ha
+- id: updates
+  alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.telegram
+    data:
+      message: 'Update for Home Assistant is available.'
