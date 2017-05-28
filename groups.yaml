@@ -8,6 +8,7 @@ default_view:
    - group.bedroom
    - group.living_room
    - group.kitchen
+   - group.toilet
    - climate.toon_thermostat
    - group.cameras
    - camera.wouter
@@ -58,6 +59,7 @@ lights:
     - group.all_lights
     - light.lamp_gang_level_16_0
     - light.lamp_wouter_level_17_0
+    - switch.lamp_toilet_switch_20_0
 
 media:
   name: media
@@ -90,7 +92,7 @@ zwave:
     - group.fibaro_dimmer
     - group.aeotec_motion_sensor
     - group.benext_door
-    - group.benext_dimmer
+    - group.lamp_wouter
     - group.neocool_water
 
 ####GROUPS####
@@ -111,7 +113,7 @@ Benext sensors:
    - group.benext_door
    - group.benext_dimmer
 
-BeNext dimmer:
+Lamp Wouter:
    - light.lamp_wouter_level_17_0
    - sensor.lamp_wouter_energy_17_0
    - sensor.lamp_wouter_exporting_17_32
@@ -268,6 +270,7 @@ Light:
    - sensor.aeotec_multisensor_6_luminance_3
    - sensor.aeotec_multisensor_6_ultraviolet_3
    - sensor.fibaro_multisensor_motion_sensor_luminance_4
+   - switch.lamp_toilet_switch_20_0
 
 Party:
    - light.party_button
@@ -300,6 +303,13 @@ Living Room:
 
 #Bathroom:
 #   - light.bathroom_led
+
+Toilet:
+   - switch.lamp_toilet_switch_20_0
+   - binary_sensor.toilet_motion_sensor_21_0
+   - sensor.toilet_motion_general_21_0
+   - sensor.toilet_motion_luminance_21_3
+   - sensor.toilet_motion_temperature_21_1
 
 Devices:
    - switch.pc_power
@@ -342,3 +352,4 @@ Temperature:
    - sensor.oregontemphygro_2cec_temp
    - sensor.oregontemphygro_2ccc_temp
    - sensor.oregontemphygro_2c75_temp
+   - sensor.toilet_motion_temperature_21_1

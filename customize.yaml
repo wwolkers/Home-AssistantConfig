@@ -1,7 +1,4 @@
 ########CUSTOMIZE DEVICES########
-#     device_tracker.cailin6p_cailin6p:
-#        entity_picture: /local/cailin.jpg
-#        friendly_name: Cailin
      device_tracker.owntracks_iphone_wouter:
         entity_picture:  /local/wouter.jpg
         friendly_name: Wouter
@@ -53,12 +50,12 @@
 #        friendly_name: AVR Power
 #        icon: mdi:television
 ####LIGHTS####
+#     switch.lamp_toilet_switch_20_0:
+#        icon: mdi:lightbulb
+#	friendly_name: "Lamp Toilet"
 #     switch.livingroom_lifx:
 #        icon: mdi:lightbulb
 #        friendly_name: "LR LIFX IFTTT"
-#     switch.bedroom_lifx:
-#        icon: mdi:lightbulb
-#        friendly_name: "BR LIFX IFTTT"
 #     switch.wemo_insight_5050_led:
 #        friendly_name: Wemo Insight
 #        icon: mdi:led-outline
@@ -129,26 +126,10 @@
 #        friendly_name: "Kitchen Fibaro"
 #        icon: mdi:thermometer
 #####LIGHTS####
-     light.lamp_gang_level_5_0:
-       friendly_name: "Lamp Gang"
-#     light.osmc:
-#        friendly_name: Hyperion RGB LEDs
-#        icon: mdi:led-outline
-#     light.br_node_led:
-#        friendly_name: Bedroom Node Led
-#        icon: mdi:led-outline
-#     light.jar_led:
-#        friendly_name: Jar LED
-#        icon: mdi:led-outline
-#     light.party_button:
-#        friendly_name:  Party Button LED
-#        icon: mdi:led-outline
-#     light.lr_door_color_lifx:
-#        friendly_name:  Front Door LIFX
-#     light.lr_fireplace_color_lifx:
-#        friendly_name:  Fireplace LIFX
-#     light.br_lifx:
-#        friendly_name:  Bedroom LIFX
+     light.lamp_gang_level_16_0:
+       friendly_name: Lamp Gang
+     light.lamp_wouter_level_17_0:
+       friendly_name: Lamp Wouter
 #####MISC####
 
 ########CUSTOMIZE SENSORS########
