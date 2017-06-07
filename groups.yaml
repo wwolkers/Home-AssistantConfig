@@ -242,6 +242,7 @@ Global:
 
 Home Assistant Status:
    - script.restart_ha
+   - sensor.cpu_temperature
    - sensor.cpu_use
    - sensor.ram_free
    - sensor.disk_free_home

@@ -45,7 +45,7 @@
     service: homeassistant.turn_off
     entity_id: light.lamp_wouter_level_17_0
 - id: lights_wouter
-  alias: 'kamer wouter: Turn on lights based on motion and lux values'
+  alias: 'Kamer wouter: Turn on lights based on motion and lux values'
   trigger:
   - entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
     from: 'off'
