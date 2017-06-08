@@ -70,7 +70,7 @@
 - id: owntracks_refresh
   alias: Owntracks Refresh
   trigger:
-  - platform: time
+    platform: time
     minutes: /15
     seconds: 0
   action:

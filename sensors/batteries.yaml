@@ -1,0 +1,65 @@
+- platform: template
+  sensors:
+    benext_dhszwsnmt01_multi_sensor_battery:
+      value_template: >-
+        {%- if states.zwave.benext_dhszwsnmt01_multi_sensor_3 -%}
+          {{ states.zwave.benext_dhszwsnmt01_multi_sensor_3.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.benext_dhszwsnmt01_multi_sensor_3
+    aeotec_dsb05_battery:
+      value_template: >-
+        {%- if states.zwave.aeotec_dsb05_multisensor_6 -%}
+          {{ states.zwave.aeotec_dsb05_multisensor_6.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.aeotec_dsb05_multisensor_6
+    benext_door_sensor_battery:
+      value_template: >-
+        {%- if states.zwave.benext_door_sensor_2 -%}
+          {{ states.zwave.benext_door_sensor_2.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.benext_door_sensor_2
+    benext_molite_sensor_battery:
+      value_template: >-
+        {%- if states.zwave.benext_molite_sensor_4 -%}
+          {{ states.zwave.benext_molite_sensor_4.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.benext_molite_sensor_4
+    toilet_motion_battery:
+      value_template: >-
+        {%- if states.zwave.toilet_motion_21 -%}
+          {{ states.zwave.toilet_motion_21.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.toilet_motion_21
+    watersensor_vaatwasser_battery:
+      value_template: >-
+        {%- if states.zwave.watersensor_vaatwasser_19 -%}
+          {{ states.zwave.watersensor_vaatwasser_19.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.watersensor_vaatwasser_19
+    watersensor_wasmachine_battery:
+      value_template: >-
+        {%- if states.zwave.watersensor_wasmachine_18 -%}
+          {{ states.zwave.watersensor_wasmachine_18.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
+      entity_id: zwave.watersensor_wasmachine_18

@@ -51,7 +51,6 @@ logbook:
 logger:
   default: info
 
-#automation: !include_dir_list automation/
 automation: !include automations.yaml
 camera: !include cameras.yaml
 group: !include groups.yaml
