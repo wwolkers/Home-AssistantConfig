@@ -223,20 +223,9 @@
      sensor.destination_ben:
         icon: mdi:map-marker
         friendly_name: "Ben's Destination"
-     input_select.cailin_status:
-        friendly_name: "Cailin's Status"
-     sensor.eta_cailin:
-        icon: mdi:map
-        friendly_name: "Cailin's ETA"
-     sensor.destination_cailin:
-        icon: mdi:map-marker
-        friendly_name: "Cailin's Destination"
      sensor.ben_nexus_6p_battery:
         icon: mdi:battery
         friendly_name: "Ben's Nexus 6P Battery"
-     sensor.cailin_nexus_6p_battery:
-        icon: mdi:battery
-        friendly_name: "Cailin's Nexus 6P Battery"
 ####MISC####
      sensor.date__time:
         icon: mdi:calendar-clock
@@ -271,8 +260,6 @@
      script.sunrise:
         hidden: true
      script.sunset:
-        hidden: true
-     script.bedtime_cailin:
         hidden: true
      script.bedtime_ben:
         hidden: true
@@ -338,14 +325,8 @@
 #     script.br_finder:
 #        friendly_name: "Ben's Phone Finder"
 #        icon: mdi:bell-ring
-#     script.cr_finder:
-#        friendly_name: "Cailin's Phone Finder"
-#        icon: mdi:bell-ring
 #     script.car_finder_ben_notify:
 #        friendly_name:  "Request Car Location"
-#        icon: mdi:map
-#     script.car_finder_cailin_notify:
-#        friendly_name: "Request Car Location"
 #        icon: mdi:map
 ########CUSTOMIZE SCENES########
      scene.vol_up:
@@ -384,8 +365,6 @@
 ########CUSTOMIZE SHELL COMMANDS########
 #     shell_command.ben6p_update:
 #       friendly_name: Ben6P Update
-#    shell_command.cailin6p_update:
-#       friendly_name: Cailin6P Update
 
 # Oregon sensors:
 # Oregon Wouter:

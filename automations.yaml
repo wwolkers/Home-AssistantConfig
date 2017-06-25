@@ -75,14 +75,6 @@
     seconds: 0
   action:
     service: script.refresh_devices
-- id: party_button_restart_ha
-  alias: button restart ha
-  trigger:
-  - platform: state
-    entity_id: sensor.party_button
-    state: Restart HA
-  action:
-    service: script.restart_ha
 - id: updates
   alias: Update Available Notifications
   trigger:
@@ -91,4 +83,24 @@
   action:
     service: notify.telegram
     data:
-      message: Update for Home Assistant is available.
+      message: "Home Assistant {{ states.updater.updater.state }} is now available."
+- id: battery_low
+  alias: Battery low
+  trigger:
+    platform: state
+    entity_id: sensor.oregontemphygro_2c75_bat, sensor.oregontemphygro_2ccc_bat, sensor.oregontemphygro_2cec_bat, sensor.oregontemphygro_cc7a_bat
+    to: low
+  action:
+    service: notify.telegram
+    data:
+      message: "Battery of {{ trigger.entity_id }} low!"
+- id: battery_below_10
+  alias: battery level below 10%
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.aeotec_dsb05_battery, sensor.benext_dhszwsnmt01_multi_sensor_battery, sensor.benext_door_sensor_battery, sensor.benext_molite_sensor_battery, sensor.toilet_motion_battery, sensor.watersensor_vaatwasser_battery, sensor.watersensor_wasmachine_battery
+    below: 11
+  action:
+    service: notify.telegram
+    data:
+      message: "Battery of {{ trigger.entity_id }} low!"

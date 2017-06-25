@@ -90,12 +90,9 @@ device_tracker:
   - platform: owntracks
   - platform: fritz
   - platform: aruba
-    host: 192.168.16.52
+    host: 192.168.16.40
     username: !secret aruba_username
     password: !secret aruba_password
-  - platform: icloud
-    username: !secret icloud_username
-    password: !secret icloud_password
   
 # OpenZWave
 zwave:
@@ -116,11 +113,11 @@ media_player:
     client_id: ac4d5f695b184a8c97eba12fec803afe
     client_secret: 5bc6e3b155b144c89a69fe39e28b70c1
 
-homematic:
-  hosts:
-    wireless:
-      ip: 127.0.0.1
-      resolvenames: metadata
+#homematic:
+#  hosts:
+#    wireless:
+#      ip: 127.0.0.1
+#      resolvenames: metadata
 
 shell_command: !include shell_commands.yaml
 
