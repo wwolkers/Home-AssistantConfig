@@ -110,8 +110,8 @@ media_player:
 # Sony TV with Android
   - platform: cast
   - platform: spotify
-    client_id: ac4d5f695b184a8c97eba12fec803afe
-    client_secret: 5bc6e3b155b144c89a69fe39e28b70c1
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
 
 #homematic:
 #  hosts:

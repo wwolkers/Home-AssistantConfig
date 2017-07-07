@@ -126,9 +126,9 @@
 #        friendly_name: "Kitchen Fibaro"
 #        icon: mdi:thermometer
 #####LIGHTS####
-     light.lamp_gang_level_16_0:
+     light.lamp_gang_level:
        friendly_name: Lamp Gang
-     light.lamp_wouter_level_17_0:
+     light.lamp_wouter_level:
        friendly_name: Lamp Wouter
 #####MISC####
 
@@ -293,9 +293,9 @@
         hidden: true
      script.alarmclockmorning:
         hidden: true
-     script.restart_ha:
-        icon: mdi:power
-        friendly_name: "Restart Home Assistant"
+#     script.restart_ha:
+#        icon: mdi:power
+#        friendly_name: "Restart Home Assistant"
      script.refresh_devices:
         friendly_name: "Refresh Device Loc/Bat"
 #     script.party_time:

@@ -2,64 +2,64 @@
   sensors:
     benext_dhszwsnmt01_multi_sensor_battery:
       value_template: >-
-        {%- if states.zwave.benext_dhszwsnmt01_multi_sensor_3 -%}
-          {{ states.zwave.benext_dhszwsnmt01_multi_sensor_3.attributes.battery_level }}
+        {%- if states.zwave.benext_dhszwsnmt01_multi_sensor -%}
+          {{ states.zwave.benext_dhszwsnmt01_multi_sensor.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.benext_dhszwsnmt01_multi_sensor_3
+      entity_id: zwave.benext_dhszwsnmt01_multi_sensor
     aeotec_dsb05_battery:
       value_template: >-
-        {%- if states.zwave.aeotec_dsb05_multisensor_6 -%}
-          {{ states.zwave.aeotec_dsb05_multisensor_6.attributes.battery_level }}
+        {%- if states.zwave.aeotec_dsb05_multisensor -%}
+          {{ states.zwave.aeotec_dsb05_multisensor.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.aeotec_dsb05_multisensor_6
+      entity_id: zwave.aeotec_dsb05_multisensor
     benext_door_sensor_battery:
       value_template: >-
-        {%- if states.zwave.benext_door_sensor_2 -%}
-          {{ states.zwave.benext_door_sensor_2.attributes.battery_level }}
+        {%- if states.zwave.benext_door_sensor -%}
+          {{ states.zwave.benext_door_sensor.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.benext_door_sensor_2
+      entity_id: zwave.benext_door_sensor
     benext_molite_sensor_battery:
       value_template: >-
-        {%- if states.zwave.benext_molite_sensor_4 -%}
-          {{ states.zwave.benext_molite_sensor_4.attributes.battery_level }}
+        {%- if states.zwave.benext_molite_sensor -%}
+          {{ states.zwave.benext_molite_sensor.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.benext_molite_sensor_4
+      entity_id: zwave.benext_molite_sensor
     toilet_motion_battery:
       value_template: >-
-        {%- if states.zwave.toilet_motion_21 -%}
-          {{ states.zwave.toilet_motion_21.attributes.battery_level }}
+        {%- if states.zwave.toilet_motion -%}
+          {{ states.zwave.toilet_motion.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.toilet_motion_21
+      entity_id: zwave.toilet_motion
     watersensor_vaatwasser_battery:
       value_template: >-
-        {%- if states.zwave.watersensor_vaatwasser_19 -%}
-          {{ states.zwave.watersensor_vaatwasser_19.attributes.battery_level }}
+        {%- if states.zwave.watersensor_vaatwasser -%}
+          {{ states.zwave.watersensor_vaatwasser.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.watersensor_vaatwasser_19
+      entity_id: zwave.watersensor_vaatwasser
     watersensor_wasmachine_battery:
       value_template: >-
-        {%- if states.zwave.watersensor_wasmachine_18 -%}
-          {{ states.zwave.watersensor_wasmachine_18.attributes.battery_level }}
+        {%- if states.zwave.watersensor_wasmachine -%}
+          {{ states.zwave.watersensor_wasmachine.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
-      entity_id: zwave.watersensor_wasmachine_18
+      entity_id: zwave.watersensor_wasmachine

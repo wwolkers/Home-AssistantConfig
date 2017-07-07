@@ -12,7 +12,7 @@
 - id: lights_toilet_off
   alias: 'Toilet: lights off after 30 seconds no motion'
   trigger:
-  - entity_id: binary_sensor.toilet_motion_sensor_21_0
+  - entity_id: binary_sensor.toilet_motion_sensor
     for:
       seconds: 30
     from: 'on'
@@ -20,52 +20,52 @@
     state: 'off'
     to: 'off'
   action:
-  - entity_id: switch.lamp_toilet_switch_20_0
+  - entity_id: switch.lamp_toilet_switch
     service: homeassistant.turn_off
 - id: lights_toilet_on
   alias: 'Toilet: Turn on light based on motion'
   trigger:
-  - entity_id: binary_sensor.toilet_motion_sensor_21_0
+  - entity_id: binary_sensor.toilet_motion_sensor
     from: 'off'
     platform: state
     state: 'on'
     to: 'on'
   action:
-  - entity_id: switch.lamp_toilet_switch_20_0
+  - entity_id: switch.lamp_toilet_switch
     service: homeassistant.turn_on
 - id: lights_wouter_off
   alias: 'Kamer wouter: lights off after 5 minutes no motion'
   trigger:
     platform: state
-    entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+    entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor
     state: 'off'
     for:
       minutes: 5
   action:
     service: homeassistant.turn_off
-    entity_id: light.lamp_wouter_level_17_0
+    entity_id: light.lamp_wouter_level
 - id: lights_wouter
   alias: 'Kamer wouter: Turn on lights based on motion and lux values'
   trigger:
-  - entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+  - entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor
     from: 'off'
     platform: state
     state: 'on'
     to: 'on'
   - below: 10
-    entity_id: sensor.aeotec_dsb05_multisensor_luminance_6_3
+    entity_id: sensor.aeotec_dsb05_multisensor_luminance
     platform: numeric_state
   condition:
   - condition: and
     conditions:
     - condition: state
-      entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor_6_0
+      entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor
       state: 'on'
     - below: 10
       condition: numeric_state
-      entity_id: sensor.aeotec_dsb05_multisensor_luminance_6_3
+      entity_id: sensor.aeotec_dsb05_multisensor_luminance
   action:
-  - entity_id: light.lamp_wouter_level_17_0
+  - entity_id: light.lamp_wouter_level
     service: homeassistant.turn_on
 - id: owntracks_refresh
   alias: Owntracks Refresh
