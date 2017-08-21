@@ -1,0 +1,17 @@
+name: Floorplan
+image: /usr/share/hassio/homeassistant/floorplan.svg
+stylesheet: /usr/share/hassio/homeassistant/floorplan.css
+
+warnings:
+
+pan_zoom:
+
+date_format: DD-MMM-YYYY
+
+groups:
+- name: Lights
+  entities:
+    - light.kitchen
+    - group.pantry_lights
+  groups:
+    - group.living_area_lights
