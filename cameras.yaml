@@ -13,3 +13,6 @@
   name: Wouter
   still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{states.device_tracker.owntracks_iphone_wouter.attributes.latitude}},{{states.device_tracker.owntracks_iphone_wouter.attributes.longitude}}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:W%7C{{states.device_tracker.owntracks_iphone_wouter.attributes.latitude}},{{states.device_tracker.owntracks_iphone_wouter.attributes.longitude}}
   limit_refetch_to_url_change: true
+#- platform: ffmpeg
+#  input: rtsp://192.168.16.30:554/ch0_0.h264
+#  name: woonkamer

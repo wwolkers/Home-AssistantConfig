@@ -140,7 +140,16 @@ rflink:
   port: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_95432313837351C061B2-if00
   
 telegram_bot:
-  platform: webhooks
+  platform: polling
   api_key: !secret telegram_api_key
   allowed_chat_ids:
     - !secret telegram_chat_id
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/avconv
+  
+vacuum:
+  platform: xiaomi
+  name: 'Stofzuiger'
+  host: !secret xiaomi_vacuum_host
+  token: !secret xiaomi_vacuum_token

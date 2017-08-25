@@ -12,6 +12,13 @@ default_view:
   - climate.toon_thermostat
   - group.cameras
   - camera.wouter
+  - camera.woonkamer
+  - vacuum.stofzuiger
+floorplans:
+  name: Floorplans
+  view: true
+  entities:
+  - binary_sensor.floorplan
 alarm:
   name: Alarm
   view: true
@@ -56,11 +63,11 @@ media:
   view: true
   entities:
   - group.devices
-scenes:
-  name: Scenes
-  view: true
-  entities:
-  - group.global
+#scenes:
+#  name: Scenes
+#  view: true
+#  entities:
+#  - group.global
 ha_status:
   name: HA Controls
   view: true
@@ -118,14 +125,16 @@ BeNext Door:
 Fibaro dimmer:
 - light.lamp_gang_level
 Fibaro Wall plug:
-- switch.fibaro_system_fgwpe_wall_plug_switch
-- sensor.fibaro_system_fgwpe_wall_plug_power
-- sensor.fibaro_system_fgwpe_wall_plug_unknown
-- switch.fibaro_system_fgwpe_wall_plug_switch
-- sensor.fibaro_system_fgwpe_wall_plug_power
-- sensor.fibaro_system_fgwpe_wall_plug_energy
-- sensor.fibaro_system_fgwpe_wall_plug_exporting
-- sensor.fibaro_system_fgwpe_wall_plug_power
+- switch.lamp_boekenkast_switch
+- sensor.lamp_boekenkast_power
+- sensor.lamp_boekenkast_energy
+- sensor.lamp_boekenkast_exporting
+- sensor.lamp_boekenkast_power
+- switch.fibaro_wall_plug_2_switch
+- sensor.fibaro_wall_plug_2_power
+- sensor.fibaro_wall_plug_2_energy
+- sensor.fibaro_wall_plug_2_exporting
+- sensor.fibaro_wall_plug_2_power
 Fibaro MultiSensor:
 - binary_sensor.fibaro_multisensor_sensor
 - sensor.fibaro_multisensor_alarm_level
@@ -251,8 +260,9 @@ Fritznetmonitor:
   - sensor.fritz_netmonitor_bytes_sent
   - sensor.fritz_netmonitor_bytes_received
 Living Room:
-- light.woonkamer_raam
-- light.woonkamer_lamp_tv
+- light.woonkamer_lamp
+- light.lamp_tv
+- switch.lamp_boekenkast_switch
 Toilet:
 - switch.lamp_toilet_switch
 - binary_sensor.toilet_motion_sensor
