@@ -14,6 +14,7 @@ default_view:
   - camera.wouter
   - camera.woonkamer
   - vacuum.stofzuiger
+  - group.links
 floorplans:
   name: Floorplans
   view: true
@@ -34,8 +35,8 @@ environment:
   entities:
   - group.temperature
   - group.humidity
-  - group.light
-  - group.sound
+  - group.co2
+  - group.lux_sensors
   - group.weather
   - group.smart_meter
 Family:
@@ -63,11 +64,6 @@ media:
   view: true
   entities:
   - group.devices
-#scenes:
-#  name: Scenes
-#  view: true
-#  entities:
-#  - group.global
 ha_status:
   name: HA Controls
   view: true
@@ -178,10 +174,6 @@ Bedroom:
 - light.br_lifx
 - switch.bedroom_lifx
 - light.br_node_led
-Brawler:
-- switch.bedroom_blinds
-- switch.kitchen_blinds
-- switch.livingroom_blinds
 Cameras:
 - camera.front_door
 - camera.porch
@@ -223,6 +215,7 @@ Home Assistant Status:
 Humidity:
 - sensor.dark_sky_humidity
 - sensor.vair_sensor_1_humidity
+- sensor.vair_sensor_2_humidity
 - sensor.br_humidity
 - sensor.btr_humidity
 - sensor.lr_humidity
@@ -233,18 +226,12 @@ Humidity:
 - sensor.oregontemphygro_2c75_hum
 Kitchen:
 - switch.kitchen_outlet
-Light:
-- sensor.br_light
-- sensor.btr_light
-- sensor.lr_light
+Lux sensors:
 - sensor.aeotec_multisensor_6_luminance
 - sensor.aeotec_multisensor_6_ultraviolet
 - sensor.fibaro_multisensor_motion_sensor_luminance
-- switch.lamp_toilet_switch
-Party:
-- light.party_button
-- sensor.party_button
-- switch.livingroom_desk_outlet
+- sensor.vair_sensor_1_lux
+- sensor.vair_sensor_2_lux
 Speedtest:
 - sensor.speedtest_ping
 - sensor.speedtest_download
@@ -279,8 +266,11 @@ Devices:
 - scene.vol_up
 - scene.vol_down
 - media_player.braviatv
+- media_player.braviatv_2
+- media_player.sony_bravia_tv
 - media_player.yamaha_receiver
 - media_player.spotify
+- media_player.plex_web_chrome
 Weather:
 - sensor.date__time
 - sensor.dark_sky_icon
@@ -303,6 +293,7 @@ Temperature:
 - sensor.dark_sky_temperature
 - sensor.dark_sky_apparent_temperature
 - sensor.vair_sensor_1_temperature
+- sensor.vair_sensor_2_temperature
 - sensor.benext_dhszwsnmt01_multi_sensor_temperature
 - sensor.benext_molite_sensor_temperature
 - sensor.oregontemphygro_cc7a_temp
@@ -310,6 +301,9 @@ Temperature:
 - sensor.oregontemphygro_2ccc_temp
 - sensor.oregontemphygro_2c75_temp
 - sensor.toilet_motion_temperature
+co2:
+- sensor.vair_sensor_1_co2
+- sensor.vair_sensor_2_co2
 Smart meter:
 - sensor.p1_gas_used_last_hour
 - sensor.p1_gas_used_cnt
@@ -341,3 +335,9 @@ Batteries:
   - sensor.toilet_motion_battery
   - sensor.watersensor_vaatwasser_battery
   - sensor.watersensor_wasmachine_battery
+links:
+  - weblink.Plex
+  - weblink.SickRage
+  - weblink.transmission
+  - weblink.aruba
+  - weblink.router  

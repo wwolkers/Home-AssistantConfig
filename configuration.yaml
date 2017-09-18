@@ -55,6 +55,7 @@ automation: !include automations.yaml
 camera: !include cameras.yaml
 group: !include groups.yaml
 sensor: !include_dir_merge_list sensors/
+binary_sensor: !include_dir_merge_list binary_sensors/
 script: !include_dir_named scripts/
 
 # log everything to influxdb for historical graphs
@@ -89,6 +90,9 @@ notify: !include notify.yaml
 device_tracker:
   - platform: owntracks
   - platform: fritz
+    host: 192.168.16.1
+    username: !secret fritz_username
+    password: !secret fritz_password
   - platform: aruba
     host: 192.168.16.40
     username: !secret aruba_username
@@ -107,8 +111,11 @@ rfxtrx:
 # Yamaha receiver
 media_player:
   - platform: yamaha
+  - platform: plex
 # Sony TV with Android
   - platform: cast
+  - platform: braviatv
+    host: 192.168.16.28
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
@@ -153,3 +160,15 @@ vacuum:
   name: 'Stofzuiger'
   host: !secret xiaomi_vacuum_host
   token: !secret xiaomi_vacuum_token
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: "Begane Grond"
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan-bg.yaml
+  - name: floorplan
+    sidebar_title: "1e Verdieping"
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan-1e.yaml    

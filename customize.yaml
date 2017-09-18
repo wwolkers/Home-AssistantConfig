@@ -112,7 +112,7 @@
         friendly_name: "Schuur Humidity"
      sensor.oregontemphygro_cc7a_temp:
         friendly_name: "Schuur Temperature"
-
+# Floorplan
      binary_sensor.floorplan:
        custom_ui_state_card: floorplan
        config: !include floorplan.yaml

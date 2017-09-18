@@ -1,12 +1,15 @@
 entities:
 - name: Plex
   url: !secret weblink_plex
+  icon: mdi:filmstrip
 - name: Sickrage
   url: !secret weblink_sickrage
 - name: Transmission
   url: !secret weblink_transmission
 - name: aruba
   url: !secret weblink_aruba
+  icon: mdi:wifi
 - name: Router
   url: !secret weblink_router
+  icon: mdi:router-wireless
 
