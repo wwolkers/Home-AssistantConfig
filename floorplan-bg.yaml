@@ -1,0 +1,14 @@
+name: Floorplan
+image: /local/custom_ui/floorplan/bg.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+
+warnings:
+
+pan_zoom:
+
+date_format: DD-MMM-YYYY
+
+groups:
+- name: Sensors
+  entities:
+    - binary_sensor.vair_sensor_1_temperature
