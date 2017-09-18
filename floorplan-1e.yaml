@@ -1,4 +1,4 @@
-name: Floorplan
+name: Floorplan 1e
 image: /local/custom_ui/floorplan/1e-verdieping.svg
 stylesheet: /local/custom_ui/floorplan/floorplan.css
 
@@ -12,3 +12,6 @@ groups:
 - name: Sensors
   entities:
     - binary_sensor.vair_sensor_1_temperature
+- name: Lights
+  entities:
+    - light.lamp_wouter_level

@@ -113,7 +113,7 @@ media_player:
   - platform: yamaha
   - platform: plex
 # Sony TV with Android
-  - platform: cast
+#  - platform: cast
   - platform: braviatv
     host: 192.168.16.28
   - platform: spotify
@@ -167,8 +167,8 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan-bg.yaml
-  - name: floorplan
+  - name: floorplan_1e
     sidebar_title: "1e Verdieping"
     sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan-1e.yaml    
+    url_path: floorplan_1e
+    config: !include floorplan-1e.yaml

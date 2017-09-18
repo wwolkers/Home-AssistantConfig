@@ -1,4 +1,4 @@
-name: Floorplan
+name: Floorplan BG
 image: /local/custom_ui/floorplan/bg.svg
 stylesheet: /local/custom_ui/floorplan/floorplan.css
 
@@ -12,3 +12,14 @@ groups:
 - name: Sensors
   entities:
     - binary_sensor.vair_sensor_1_temperature
+- name: Lights
+  entities:
+    - light.lamp_gang_level
+    - light.lamp_tv
+    - light.woonkamer_lamp
+    - switch.lamp_boekenkast_switch
+  states:
+    - state: 'on'
+      class: 'light-on'
+    - state: 'off'
+      class: 'light-off'
