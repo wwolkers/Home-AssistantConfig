@@ -15,17 +15,6 @@
   action:
     service: homeassistant.turn_off
     entity_id: group.living_room
-- id: alarm
-  alias: 'alarm: Notify state changes'
-  hide_entity: true
-  trigger:
-  - entity_id: alarm_control_panel.alarm
-    platform: state
-  action:
-  - data_template:
-      message: Alarm changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state
-        }}
-    service: notify.telegram
 - id: lights_toilet_off
   alias: 'Toilet: lights off after 30 seconds no motion'
   trigger:

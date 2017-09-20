@@ -95,13 +95,13 @@
      sensor.oregontemphygro_2ccc_temp:
         friendly_name: "Badkamer Temperature"
 # Oregon Slaapkamer:
-     sensor.oregontemphygro_2cec_bat:
+     sensor.oregontemphygro_2c40_bat:
         friendly_name: "Slaapkamer Battery"
-     sensor.oregontemphygro_2cec_hstatus:
+     sensor.oregontemphygro_2c40_hstatus:
         friendly_name: "Slaapkamer Sensor Status"
-     sensor.oregontemphygro_2cec_hum:
+     sensor.oregontemphygro_2c40_hum:
         friendly_name: "Slaapkamer Humidity"
-     sensor.oregontemphygro_2cec_temp:
+     sensor.oregontemphygro_2c40_temp:
         friendly_name: "Slaapkamer Temperature"
 # Oregon Schuur:
      sensor.oregontemphygro_cc7a_bat:

@@ -4,20 +4,46 @@ stylesheet: /local/custom_ui/floorplan/floorplan.css
 
 warnings:
 
-pan_zoom:
+#pan_zoom:
 
 date_format: DD-MMM-YYYY
 
 groups:
+- name: Binary Sensors
+  entities:
+    - binary_sensor.toilet_motion_sensor
+  states:
+    - state: 'off'
+      class: 'motion-off'
+    - state: 'on'
+      class: 'motion-on'
+  state_transitions:
+    - name: On to off
+      from_state: 'on'
+      to_state: 'off'
+      duration: 2
+    - name: Off to on
+      from_state: 'off'
+      to_state: 'on'
+      duration: 1
 - name: Sensors
   entities:
-    - binary_sensor.vair_sensor_1_temperature
+    - sensor.vair_sensor_1_temperature
+    - sensor.toilet_motion_temperature
 - name: Lights
   entities:
     - light.lamp_gang_level
     - light.lamp_tv
     - light.woonkamer_lamp
+  states:
+    - state: 'on'
+      class: 'light-on'
+    - state: 'off'
+      class: 'light-off'
+- name: switch
+  entities:
     - switch.lamp_boekenkast_switch
+    - switch.lamp_toilet_switch
   states:
     - state: 'on'
       class: 'light-on'

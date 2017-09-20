@@ -3,4 +3,4 @@
     name: Floorplan_1e
   - platform: mqtt
     state_topic: "dummy/floorplan/sensor"
-    name: Floorplan_bg    
+    name: Floorplan_bg

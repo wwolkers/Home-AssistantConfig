@@ -297,7 +297,7 @@ Temperature:
 - sensor.benext_dhszwsnmt01_multi_sensor_temperature
 - sensor.benext_molite_sensor_temperature
 - sensor.oregontemphygro_cc7a_temp
-- sensor.oregontemphygro_2cec_temp
+- sensor.oregontemphygro_2c40_temp
 - sensor.oregontemphygro_2ccc_temp
 - sensor.oregontemphygro_2c75_temp
 - sensor.toilet_motion_temperature

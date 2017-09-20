@@ -1,3 +1,22 @@
+# Floorplan sensors
+  - platform: mqtt
+    state_topic: "dummy/floorplan/sensor"
+    name: Floorplan_1e
+  - platform: mqtt
+    state_topic: "dummy/floorplan/sensor"
+    name: Floorplan_bg
+# McThings sensors
+  - platform: mqtt
+    state_topic: "mcThings/DoorSensor1/state"
+    name: "mcThings DoorSensor 1 Temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json["data"]["temperature"] }}'
+  - platform: mqtt
+    state_topic: "mcThings/DoorSensor1/state"
+    name: "mcThings DoorSensor 1 Battery"
+    unit_of_measurement: "V"
+    value_template: '{{ value_json["data"]["battery"] }}'
+# vAir sensors
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Temperature"
