@@ -4,3 +4,57 @@
     unit_of_measurement: 'W'
     value_template: '{{ value_json.power }}'
     sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Zonnepaneel Links"
+    state_topic: 'plugwise2py/state/power/000D6F00002362A6'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Koelkast"
+    state_topic: 'plugwise2py/state/power/000D6F0000236997'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise CV"
+    state_topic: 'plugwise2py/state/power/000D6F0000236D2F'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Mechanische Ventilatie"
+    state_topic: 'plugwise2py/state/power/000D6F00002369B9'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Zonnepaneel Rechts"
+    state_topic: 'plugwise2py/state/power/000D6F000023725F'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Lamp Buffetkast"
+    state_topic: 'plugwise2py/state/power/000D6F0000237228'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Keuken"
+    state_topic: 'plugwise2py/state/power/000D6F0000236A41'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise TV"
+    state_topic: 'plugwise2py/state/power/000D6F0000236385'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power
+  - platform: mqtt
+    name: "Plugwise Lamp"
+    state_topic: 'plugwise2py/state/power/000D6F00002372B2'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power    

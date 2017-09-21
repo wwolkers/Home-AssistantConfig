@@ -15,11 +15,6 @@ default_view:
   - camera.woonkamer
   - vacuum.stofzuiger
   - group.links
-floorplans:
-  name: Floorplans
-  view: true
-  entities:
-  - binary_sensor.floorplan
 alarm:
   name: Alarm
   view: true
@@ -59,6 +54,10 @@ lights:
   - light.lamp_gang_level
   - light.lamp_wouter_level
   - switch.lamp_toilet_switch
+  - switch.plugwise_lamp_buffetkast
+  - switch.plugwise_mechanische_ventilatie
+  - switch.plugwise_cv
+  - group.all_switches
 media:
   name: media
   view: true
@@ -255,6 +254,7 @@ Living Room:
 - light.woonkamer_lamp
 - light.lamp_tv
 - switch.lamp_boekenkast_switch
+- switch.plugwise_lamp_buffetkast
 Toilet:
 - switch.lamp_toilet_switch
 - binary_sensor.toilet_motion_sensor

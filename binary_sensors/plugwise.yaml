@@ -5,3 +5,73 @@
     value_template: '{{ value_json.online }}'
     payload_on: True
     payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Koelkast'
+    state_topic: 'plugwise2py/state/circle/000D6F0000236997'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Keuken'
+    state_topic: 'plugwise2py/state/circle/000D6F0000236A41'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for TV'
+    state_topic: 'plugwise2py/state/circle/000D6F0000236385'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Lamp'
+    state_topic: 'plugwise2py/state/circle/000D6F00002372B2'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Meterkast'
+    state_topic: 'plugwise2py/state/circle/000D6F00002365FE'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Zonnepaneel Rechts'
+    state_topic: 'plugwise2py/state/circle/000D6F000023725F'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Zonnepaneel Links'
+    state_topic: 'plugwise2py/state/circle/000D6F00002362A6'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for CV'
+    state_topic: 'plugwise2py/state/circle/000D6F0000236D2F'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Mechanische Ventilatie'
+    state_topic: 'plugwise2py/state/circle/000D6F00002369B9'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Lamp Buffetkast'
+    state_topic: 'plugwise2py/state/circle/000D6F0000237228'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False
