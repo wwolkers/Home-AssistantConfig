@@ -173,11 +173,16 @@ panel_custom:
 #    sidebar_icon: mdi:map
 #    url_path: floorplans
 #    config: !include floorplans.yaml
+#  - name: floorplan
+#    sidebar_title: "Begane Grond"
+#    sidebar_icon: mdi:floor-plan
+#    url_path: floorplan
+#    config: !include floorplan-bg.yaml
   - name: floorplan
-    sidebar_title: "Begane Grond"
+    sidebar_title: "Floorplan"
     sidebar_icon: mdi:floor-plan
     url_path: floorplan
-    config: !include floorplan-bg.yaml
+    config: !include floorplan.yaml
 #  - name: floorplan_1e
 #    sidebar_title: "1e Verdieping"
 #    sidebar_icon: mdi:home

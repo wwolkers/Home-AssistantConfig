@@ -1,0 +1,6 @@
+  - platform: mqtt
+    name: "Plugwise Server"
+    state_topic: 'plugwise2py/state/power/000D6F00002365FE'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
+    sensor_class: power

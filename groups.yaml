@@ -120,6 +120,11 @@ BeNext Door:
 - binary_sensor.benext_door_sensor_sensor
 Fibaro dimmer:
 - light.lamp_gang_level
+- sensor.lamp_gang_energy
+- sensor.lamp_gang_exporting
+- sensor.lamp_gang_interval
+- sensor.lamp_gang_power
+- sensor.lamp_gang_previous_reading
 Fibaro Wall plug:
 - switch.lamp_boekenkast_switch
 - sensor.lamp_boekenkast_power
