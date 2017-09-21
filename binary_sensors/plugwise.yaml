@@ -1,0 +1,7 @@
+  - platform: mqtt
+    name: 'Plugwise Circle Status for Server'
+    state_topic: 'plugwise2py/state/circle/000D6F00002365FE'
+    sensor_class: connectivity
+    value_template: '{{ value_json.online }}'
+    payload_on: True
+    payload_off: False

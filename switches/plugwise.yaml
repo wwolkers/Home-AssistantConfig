@@ -1,0 +1,9 @@
+- platform: mqtt
+  name: "Plugwise Server"
+  optimistic : false
+  command_topic: 'plugwise2py/cmd/switch/000D6F00002365FE'
+  state_topic: 'plugwise2py/state/circle/000D6F00002365FE'
+  value_template: '{"mac": "000D6F000XXXXXXX", "cmd": "switch", "val": "{{ value_json.switch }}"}'
+  payload_on: '{"mac": "000D6F000XXXXXXX", "cmd": "switch", "val": "on"}'
+  payload_off: '{"mac": "000D6F000XXXXXXX", "cmd": "switch", "val": "off"}'
+  retain: true
