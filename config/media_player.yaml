@@ -1,0 +1,9 @@
+  - platform: yamaha
+  - platform: plex
+# Sony TV with Android
+#  - platform: cast
+  - platform: braviatv
+    host: 192.168.16.28
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret

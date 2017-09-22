@@ -1,0 +1,27 @@
+- platform: command_line
+  command: sudo hddtemp /dev/disk/by-id/ata-SanDisk_SDSSDX120GG25_130435400843
+  value_template: '{{ value [-4:-2] | int }}'
+  name: disk1 temperature
+  unit_of_measurement: °C
+  scan_interval: 60
+
+- platform: command_line
+  command: sudo hddtemp /dev/disk/by-uuid/5550d519-a70e-4242-9ef4-d51c9205874b
+  value_template: '{{ value [-4:-2] | int }}'
+  name: disk2 temperature
+  unit_of_measurement: °C
+  scan_interval: 60
+
+- platform: command_line
+  command: sudo hddtemp /dev/disk/by-uuid/d9f3133a-d1a1-4778-b8b4-8c9bf1384f35
+  value_template: '{{ value [-4:-2] | int }}'
+  name: disk3 temperature
+  unit_of_measurement: °C
+  scan_interval: 60
+
+- platform: command_line
+  command: sudo hddtemp /dev/disk/by-uuid/e480ecae-699e-47db-b60f-c8c12529657c
+  value_template: '{{ value [-4:-2] | int }}'
+  name: disk4 temperature
+  unit_of_measurement: °C
+  scan_interval: 60

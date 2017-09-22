@@ -71,6 +71,20 @@ ha_status:
   - group.speedtest
   - group.lockouts
   - group.fritznetmonitor
+power:
+  name: Power
+  view: true
+  entities:
+  - sensor.plugwise_cv
+  - sensor.plugwise_keuken
+  - sensor.plugwise_koelkast
+  - sensor.plugwise_lamp_buffetkast
+  - sensor.plugwise_mechanische_ventilatie
+  - sensor.plugwise_server
+  - sensor.plugwise_tv
+  - sensor.plugwise_zonnepaneel_links
+  - sensor.plugwise_zonnepaneel_rechts
+  - group.smart_meter
 zwave:
   name: ZWave
   view: true
@@ -345,4 +359,4 @@ links:
   - weblink.SickRage
   - weblink.transmission
   - weblink.aruba
-  - weblink.router  
+  - weblink.router

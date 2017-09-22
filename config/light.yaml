@@ -1,0 +1,4 @@
+  - platform: rfxtrx
+    automatic_add: true
+  - platform: hue
+    host: 192.168.16.26

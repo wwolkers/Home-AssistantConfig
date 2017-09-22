@@ -1,0 +1,9 @@
+  - platform: owntracks
+  - platform: fritz
+    host: 192.168.16.1
+    username: !secret fritz_username
+    password: !secret fritz_password
+  - platform: aruba
+    host: 192.168.16.40
+    username: !secret aruba_username
+    password: !secret aruba_password

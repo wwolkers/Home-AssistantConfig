@@ -1,0 +1,6 @@
+  exclude:
+    entities:
+      - sensor.date
+      - sensor.date__time
+      - sensor.time
+      - sensor.time__date

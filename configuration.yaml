@@ -1,31 +1,35 @@
-homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Home
-  # Location required to calculate the time the sun rises and sets
-  latitude: 52.357958
-  longitude: 4.780472
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
-  # metric for Metric, imperial for Imperial
-  unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Europe/Amsterdam
-  customize: !include customize.yaml
+automation: !include automations.yaml
+binary_sensor: !include_dir_merge_list binary_sensors/
+camera: !include cameras.yaml
+climate: !include config/climate.yaml
+device_tracker: !include config/device_tracker.yaml
+ffmpeg: !include config/ffmpeg.yaml
+group: !include groups.yaml
+homeassistant: !include config/homeassistant.yaml
+#homematic: !include config/homematic.yaml
+http: !include config/http.yaml
+light: !include config/light.yaml
+logbook: !include config/logbook.yaml
+media_player: !include config/media_player.yaml
+mqtt: !include config/mqtt.yaml
+notify: !include notify.yaml
+panel_custom: !include config/panel_custom.yaml
+rflink: !include config/rflink.yaml
+rfxtrx: !include config/rfxtrx.yaml
+script: !include_dir_named scripts/
+sensor: !include_dir_merge_list sensors/
+shell_command: !include shell_commands.yaml
+switch: !include_dir_merge_list switches/
+telegram_bot: !include config/telegram_bot.yaml
+vacuum: !include config/vacuum.yaml
+weblink: !include weblinks.yaml
+zone: !include zones.yaml
+zwave: !include config/zwave.yaml
 
-# Show links to resources in log and frontend
-# introduction:
+config:
 
 # Enables the frontend
 frontend:
-
-http:
-#  ssl_certificate: /ssl/fullchain.pem
-#  ssl_key: /ssl/privkey.pem
-  # Uncomment this to add a password (recommended!)
-  api_password: !secret http_api_password
-  trusted_networks:
-    - 127.0.0.1/32
-    - 192.168.16.0/24
 
 # Checks for available updates
 updater:
@@ -39,25 +43,8 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
-# View all events in a logbook
-logbook:
-  exclude:
-    entities:
-      - sensor.date
-      - sensor.date__time
-      - sensor.time
-      - sensor.time__date
-
 logger:
   default: info
-
-automation: !include automations.yaml
-binary_sensor: !include_dir_merge_list binary_sensors/
-camera: !include cameras.yaml
-group: !include groups.yaml
-script: !include_dir_named scripts/
-sensor: !include_dir_merge_list sensors/
-switch: !include_dir_merge_list switches/
 
 # log everything to influxdb for historical graphs
 #influxdb:
@@ -67,121 +54,3 @@ switch: !include_dir_merge_list switches/
 
 # Track the sun
 sun:
-
-climate:
-  platform: toon
-  name: Toon Thermostat
-  host: 192.168.16.16
-  port: 10080
-#  scan_interval: 10
-  
-# MQTT setup
-mqtt:
-  broker: 192.168.16.5
-  port: 1883
-  client_id: home-assistant-1
-#  keepalive: 60
-#  protocol: 3.1
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
-
-
-# Example configuration.yaml entry
-notify: !include notify.yaml
-
-# Owntracks configuration
-device_tracker:
-  - platform: owntracks
-  - platform: fritz
-    host: 192.168.16.1
-    username: !secret fritz_username
-    password: !secret fritz_password
-  - platform: aruba
-    host: 192.168.16.40
-    username: !secret aruba_username
-    password: !secret aruba_password
-  
-# OpenZWave
-zwave:
-  usb_path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
-  device_config: !include zwave_device_config.yaml
-  
-# RFXCom
-rfxtrx:
-  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1Y0QAVS-if00-port0
-  debug: true
-  
-# Yamaha receiver
-media_player:
-  - platform: yamaha
-  - platform: plex
-# Sony TV with Android
-#  - platform: cast
-  - platform: braviatv
-    host: 192.168.16.28
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
-
-#homematic:
-#  hosts:
-#    wireless:
-#      ip: 127.0.0.1
-#      resolvenames: metadata
-
-shell_command: !include shell_commands.yaml
-
-light:
-  - platform: rfxtrx
-    automatic_add: true
-  - platform: hue
-    host: 192.168.16.26
-
-zone: !include zones.yaml
-weblink: !include weblinks.yaml
-
-config:
-
-rflink:
-  port: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_95432313837351C061B2-if00
-  
-telegram_bot:
-  platform: polling
-  api_key: !secret telegram_api_key
-  allowed_chat_ids:
-    - !secret telegram_chat_id
-
-ffmpeg:
-  ffmpeg_bin: /usr/bin/avconv
-  
-vacuum:
-  platform: xiaomi
-  name: 'Stofzuiger'
-  host: !secret xiaomi_vacuum_host
-  token: !secret xiaomi_vacuum_token
-
-panel_custom:
-#  - name: floorplans
-#    sidebar_title: Floorplans
-#    sidebar_icon: mdi:map
-#    url_path: floorplans
-#    config: !include floorplans.yaml
-#  - name: floorplan
-#    sidebar_title: "Begane Grond"
-#    sidebar_icon: mdi:floor-plan
-#    url_path: floorplan
-#    config: !include floorplan-bg.yaml
-  - name: floorplan
-    sidebar_title: "Floorplan"
-    sidebar_icon: mdi:floor-plan
-    url_path: floorplan
-    config: !include floorplan.yaml
-#  - name: floorplan_1e
-#    sidebar_title: "1e Verdieping"
-#    sidebar_icon: mdi:home
-#    url_path: floorplan_1e
-#    config: !include floorplan-1e.yaml

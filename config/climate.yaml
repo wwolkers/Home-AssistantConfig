@@ -1,0 +1,5 @@
+  platform: toon
+  name: Toon Thermostat
+  host: 192.168.16.16
+  port: 10080
+#  scan_interval: 10
