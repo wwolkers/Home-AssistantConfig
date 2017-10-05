@@ -1,4 +1,4 @@
-  platform: xiaomi
+  platform: xiaomi_miio
   name: 'Stofzuiger'
   host: !secret xiaomi_vacuum_host
   token: !secret xiaomi_vacuum_token

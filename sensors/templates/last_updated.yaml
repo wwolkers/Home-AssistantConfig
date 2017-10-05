@@ -1,0 +1,22 @@
+  - platform: template
+    sensors:
+      plugwise_lamp_buffetkast_last_updated:
+        friendly_name: Plugwise Lamp Buffetkast last updated
+        entity_id:
+          - sensor.plugwise_lamp_buffetkast
+        value_template: >-
+          {% if states.sensor.plugwise_lamp_buffetkast.last_updated is undefined%}
+            {{"00:00:00"}}
+          {% else %}
+            {{ ((as_timestamp(states.sensor.date__time.last_updated)-as_timestamp(states.sensor.plugwise_lamp_buffetkast.last_updated))|timestamp_utc)[11:19] }}
+          {% endif %}
+      plugwise_zonnepaneel_links_last_updated:
+        friendly_name: Plugwise Zonnepaneel Links last updated
+        entity_id:
+        - sensor.plugwise_zonnepaneel_links
+        value_template: >-
+          {% if states.sensor.plugwise_zonnepaneel_links.last_updated is undefined%}
+            {{"00:00:00"}}
+          {% else %}
+            {{ ((as_timestamp(states.sensor.date__time.last_updated)-as_timestamp(states.sensor.plugwise_zonnepaneel_links.last_updated))|timestamp_utc)[11:19] }}
+          {% endif %}

@@ -11,74 +11,94 @@
     name: "mcThings DoorSensor 1 Temperature"
     unit_of_measurement: "°C"
     value_template: '{{ value_json["data"]["temperature"] }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "mcThings/DoorSensor1/state"
     name: "mcThings DoorSensor 1 Battery"
     unit_of_measurement: "V"
     value_template: '{{ value_json["data"]["battery"] }}'
+    expires_after: 1800
+  - platform: mqtt
+    state_topic: "mcThings/DoorSensor1/state"
+    name: "mcThings DoorSensor 1 door"
+    value_template: '{{ value_json["data"]["doorState"] }}'
+    expires_after: 1800
 # vAir sensors
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Temperature"
     unit_of_measurement: "°C"
     value_template: '{{ value_json.temp }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 CO2"
     unit_of_measurement: "ppm"
     value_template: '{{ value_json.co2 }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Humidity"
     unit_of_measurement: "%"
     value_template: '{{ value_json.hum }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Pressure"
     unit_of_measurement: "hpa"
     value_template: '{{ value_json.pres }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Altitude"
     unit_of_measurement: "m"
     value_template: '{{ value_json.alt }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/1"
     name: "vAIR Sensor 1 Light "
     unit_of_measurement: "lux"
     value_template: '{{ value_json.lux }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "owntracks/owntracks/iPhone Wouter"
     name: "Wouter iPhone battery"
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 Temperature"
     unit_of_measurement: "°C"
     value_template: '{{ value_json.temp }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 CO2"
     unit_of_measurement: "ppm"
     value_template: '{{ value_json.co2 }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 Humidity"
     unit_of_measurement: "%"
     value_template: '{{ value_json.hum }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 Pressure"
     unit_of_measurement: "hpa"
     value_template: '{{ value_json.pres }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 Altitude"
     unit_of_measurement: "m"
     value_template: '{{ value_json.alt }}'
+    expires_after: 1800
   - platform: mqtt
     state_topic: "vair/2"
     name: "vAIR Sensor 2 Light "
     unit_of_measurement: "lux"
     value_template: '{{ value_json.lux }}'
+    expires_after: 1800

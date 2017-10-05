@@ -80,7 +80,7 @@ svg, svg * {
 }
   
 .motion-on {
-  fill: #FFE6E6 !important;
+  fill: #F7b4b4 !important;
 }
 
 /* Alarm Panel */
@@ -150,4 +150,43 @@ svg, svg * {
 
 .squeezebox-on {
   fill: #2baaa6 !important;
+}
+
+/* Animation */
+@keyframes rotate90 {
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotateReset90 {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+/* Doors that open to the top left */
+#sensor\.mcthings_doorsensor_1_door {
+    transform-origin: top left;
+}
+  
+/* Doors that open to the bottom right */
+#DOMAIN\.DOOR2 {
+    transform-origin: bottom right;
+}
+    
+.door_closed {
+    fill: #008000 !important;
+    animation-duration: 4s;
+    animation-name: rotateReset90;
+}
+          
+.door_open {
+    fill: #ff0000 !important;
+    animation-duration: 4s;
+    animation-name: rotate90;
+    animation-fill-mode: forwards;
 }

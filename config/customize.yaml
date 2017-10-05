@@ -98,3 +98,9 @@ sensor.oregontemphygro_cc7a_temp:
   friendly_name: Schuur Temperature
 sensor.plugwise_cv:
   friendly_name: Verbruik CV
+switch.lamp_boekenkast_switch:
+  icon: mdi:lightbulb
+  assumed_state: false
+switch.plugwise_lamp_buffetkast:
+  icon: mdi:lightbulb
+  assumed_state: false
