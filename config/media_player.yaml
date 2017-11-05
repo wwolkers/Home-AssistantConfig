@@ -2,8 +2,14 @@
   - platform: plex
 # Sony TV with Android
 #  - platform: cast
-  - platform: braviatv
+#  - platform: braviatv
+#    host: 192.168.16.28
+  - platform: braviatv_psk
     host: 192.168.16.28
+    psk: !secret bravia_psk
+    mac: AC:9B:0A:58:B7:A0
+    amp: true
+    android: true
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret

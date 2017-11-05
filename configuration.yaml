@@ -9,6 +9,7 @@ group: !include groups.yaml
 homeassistant: !include config/homeassistant.yaml
 #homematic: !include config/homematic.yaml
 http: !include config/http.yaml
+ios:
 light: !include config/light.yaml
 logbook: !include config/logbook.yaml
 media_player: !include config/media_player.yaml
@@ -19,7 +20,7 @@ rflink: !include config/rflink.yaml
 rfxtrx: !include config/rfxtrx.yaml
 script: !include_dir_named scripts/
 sensor: !include_dir_merge_list sensors/
-shell_command: !include shell_commands.yaml
+shell_command: !include config/shell_commands.yaml
 switch: !include_dir_merge_list switches/
 telegram_bot: !include config/telegram_bot.yaml
 vacuum: !include config/vacuum.yaml
@@ -55,3 +56,7 @@ logger:
 
 # Track the sun
 sun:
+
+recorder:
+  purge_interval: 2
+  purge_keep_days: 7
