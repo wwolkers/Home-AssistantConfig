@@ -1,0 +1,9 @@
+  yamaha_radio_station:
+    name: 'Select Radio Station:'
+      options:
+        - Fresh FM 95.7
+        - RNE - Radio 3
+        - Radio Veronica
+        - NPO 3FM
+        - Sky Radio 101 FM
+        - SubLime FM 90.7

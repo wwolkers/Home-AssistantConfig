@@ -1,0 +1,21 @@
+  sequence:
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.yamaha_receiver
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.yamaha_receiver
+      volume_level: 0.48
+  - service: media_player.play_media
+    data_template:
+      entity_id: media_player.yamaha_receiver
+      media_content_type: "NET RADIO"
+      media_content_id: >
+        {% if is_state("input_select.yamaha_radio_station", "Fresm FM 95.7") %} Bookmarks>My_Favorites>Fresh FM 95.7
+        {% elif is_state("input_select.yamaha_radio_station", "RNE - Radio 3") %} Bookmarks>My_Favorites>RNE - Radio 3
+        {% elif is_state("input_select.yamaha_radio_station", "Radio Veronica") %} Lesezeichen>Radio>Radio Veronica
+        {% elif is_state("input_select.yamaha_radio_station", "538 IBIZA") %} Lesezeichen>Radio>538 IBIZA
+        {% elif is_state("input_select.yamaha_radio_station", "Ibiza Sonica 95.2 FM") %} Lesezeichen>Radio>Ibiza Sonica 95.2 FM
+        {% elif is_state("input_select.yamaha_radio_station", "DNB FM") %} Lesezeichen>Radio>DNB FM
+        {% elif is_state("input_select.yamaha_radio_station", "dnbzone laut.fm") %} Lesezeichen>Radio>dnbzone laut.fm
+        {% endif %}

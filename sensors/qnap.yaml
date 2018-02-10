@@ -1,0 +1,17 @@
+  - platform: qnap
+    host: 192.168.16.22
+    username: admin
+    password: !secret qnap_password
+    ssl: true
+    verify_ssl: false
+    port: 443
+    monitored_conditions:
+      - status
+      - system_temp
+      - cpu_usage
+      - drive_smart_status
+      - drive_temp
+      - memory_percent_used
+      - network_tx
+      - network_rx
+      - volume_percentage_used
