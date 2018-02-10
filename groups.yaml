@@ -1,5 +1,6 @@
 default_view:
   view: true
+  name: Home
   entities:
   - device_tracker.iphonewouter
   - device_tracker.owntracks_iphone_wouter
@@ -61,10 +62,16 @@ lights:
   - switch.plugwise_mechanische_ventilatie
   - switch.plugwise_cv
   - group.all_switches
+yamaha_radio:
+  name: Yamaha Radio
+  entities:
+  - input_select.yamaha_radio_station
+  - script.yamaha_radio
 media:
   name: media
   view: true
   entities:
+  - group.yamaha_radio
   - group.devices
 ha_status:
   name: HA Controls
@@ -74,6 +81,7 @@ ha_status:
   - group.speedtest
   - group.lockouts
   - group.fritznetmonitor
+  - group.qnap
 power:
   name: Power
   view: true
@@ -227,13 +235,28 @@ Global:
 - input_select.lullaby
 - script.IFTTT
 Home Assistant Status:
-- script.restart_ha
 - sensor.cpu_temperature
 - sensor.cpu_use
 - sensor.ram_free
 - sensor.disk_free_home
 - sensor.disk_free_storage
 - sensor.last_boot
+Qnap:
+- sensor.nas_status
+- sensor.nas_cpu_usage
+- sensor.nas_memory_usage
+- sensor.nas_system_temperature
+- sensor.nas_network_down_eth0
+- sensor.nas_network_up_eth0
+- sensor.nas_smart_status_drive_1
+- sensor.nas_temperature_drive_1
+- sensor.nas_smart_status_drive_2
+- sensor.nas_temperature_drive_2
+- sensor.nas_smart_status_drive_3
+- sensor.nas_temperature_drive_3
+- sensor.nas_smart_status_drive_4
+- sensor.nas_temperature_drive_4
+- sensor.nas_volume_used_volume_1
 Humidity:
 - sensor.dark_sky_humidity
 - sensor.vair_sensor_1_humidity

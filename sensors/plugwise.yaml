@@ -57,4 +57,4 @@
     state_topic: 'plugwise2py/state/power/000D6F00002372B2'
     unit_of_measurement: 'W'
     value_template: '{{ value_json.power }}'
-    sensor_class: power    
+    sensor_class: power

@@ -15,37 +15,37 @@
   action:
     service: homeassistant.turn_off
     entity_id: group.living_room
-- id: lights_toilet_off
-  alias: 'Toilet: lights off after 30 seconds no motion'
-  trigger:
-  - entity_id: binary_sensor.toilet_motion_sensor
-    for:
-      seconds: 30
-    platform: state
-    to: 'off'
-  action:
-  - entity_id: switch.lamp_toilet_switch
-    service: homeassistant.turn_off
-- id: lights_toilet_on
-  alias: 'Toilet: Turn on light based on motion'
-  trigger:
-  - entity_id: binary_sensor.toilet_motion_sensor
-    platform: state
-    to: 'on'
-  action:
-  - entity_id: switch.lamp_toilet_switch
-    service: homeassistant.turn_on
-- id: lights_wouter_off
-  alias: 'Kamer wouter: lights off after 5 minutes no motion'
-  trigger:
-  - entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor
-    platform: state
-    to: 'off'
-    for:
-      minutes: 5
-  action:
-    service: homeassistant.turn_off
-    entity_id: light.lamp_wouter_level
+#- id: lights_toilet_off
+#  alias: 'Toilet: lights off after 30 seconds no motion'
+#  trigger:
+#  - entity_id: binary_sensor.toilet_motion_sensor
+#    for:
+#      seconds: 30
+#    platform: state
+#    to: 'off'
+#  action:
+#  - entity_id: switch.lamp_toilet_switch
+#    service: homeassistant.turn_off
+#- id: lights_toilet_on
+#  alias: 'Toilet: Turn on light based on motion'
+#  trigger:
+#  - entity_id: binary_sensor.toilet_motion_sensor
+#    platform: state
+#    to: 'on'
+#  action:
+#  - entity_id: switch.lamp_toilet_switch
+#    service: homeassistant.turn_on
+#- id: lights_wouter_off
+#  alias: 'Kamer wouter: lights off after 5 minutes no motion'
+#  trigger:
+#  - entity_id: binary_sensor.aeotec_dsb05_multisensor_sensor
+#    platform: state
+#    to: 'off'
+#    for:
+#      minutes: 5
+#  action:
+#    service: homeassistant.turn_off
+#    entity_id: light.lamp_wouter_level
 - id: owntracks_refresh
   alias: Owntracks Refresh
   trigger:

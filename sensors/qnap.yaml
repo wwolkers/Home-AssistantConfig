@@ -15,3 +15,5 @@
       - network_tx
       - network_rx
       - volume_percentage_used
+    volumes:
+      - Volume 1

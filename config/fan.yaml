@@ -2,6 +2,7 @@
     name: "Mechanische Ventilatie"
     command_topic: "esp/mv/commands"
     speed_command_topic: "esp/mv"
+    speed_state_topic: 'mechanische_ventilatie/on/state'
     payload_low_speed: "1"
     payload_medium_speed: "2"
     payload_high_speed: "3"

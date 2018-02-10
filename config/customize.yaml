@@ -72,13 +72,13 @@ sensor.oregontemphygro_2c75_hum:
   friendly_name: Kamer Wouter Humidity
 sensor.oregontemphygro_2c75_temp:
   friendly_name: Kamer Wouter Temperature
-sensor.oregontemphygro_2ccc_bat:
+sensor.oregontemphygro_2c6a_bat:
   friendly_name: Badkamer Battery
-sensor.oregontemphygro_2ccc_hstatus:
+sensor.oregontemphygro_2c6a_hstatus:
   friendly_name: Badkamer Sensor Status
-sensor.oregontemphygro_2ccc_hum:
+sensor.oregontemphygro_2c6a_hum:
   friendly_name: Badkamer Humidity
-sensor.oregontemphygro_2ccc_temp:
+sensor.oregontemphygro_2c6a_temp:
   friendly_name: Badkamer Temperature
 sensor.oregontemphygro_2c40_bat:
   friendly_name: Slaapkamer Battery
@@ -104,3 +104,6 @@ switch.lamp_boekenkast_switch:
 switch.plugwise_lamp_buffetkast:
   icon: mdi:lightbulb
   assumed_state: false
+script.yamaha_radio:
+  friendly_name: Start Playing
+  icon: mdi:play
