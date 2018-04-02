@@ -1,0 +1,7 @@
+- platform: hddtemp
+  disk:
+    - /dev/sda
+    - /dev/sdb
+    - /dev/sdc
+    - /dev/sdd
+    

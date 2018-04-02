@@ -3,5 +3,9 @@
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_api_password
   trusted_networks:
-    - 127.0.0.1/32
     - 192.168.16.0/24
+#    - 127.0.0.1/32
+# Do NOT add this, it will allow access from anywhere since connections
+# Connections from the internet are proxies from 192.168.16.5
+  ip_ban_enabled: True
+  login_attempts_threshold: 5

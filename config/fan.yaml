@@ -3,6 +3,9 @@
     command_topic: "esp/mv/commands"
     speed_command_topic: "esp/mv"
     speed_state_topic: 'mechanische_ventilatie/on/state'
+    state_topic: 'mechanische_ventilatie/on/state'
+    payload_on: '{"mac": "000D6F00002369B9", "cmd": "switch", "val": "on"}'
+    payload_off: '{"mac": "000D6F00002369B9", "cmd": "switch", "val": "off"}'
     payload_low_speed: "1"
     payload_medium_speed: "2"
     payload_high_speed: "3"
