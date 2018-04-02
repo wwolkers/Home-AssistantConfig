@@ -3,6 +3,7 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 camera: !include config/cameras.yaml
 climate: !include config/climate.yaml
 device_tracker: !include config/device_tracker.yaml
+emulated_hue:
 fan: !include config/fan.yaml
 ffmpeg: !include config/ffmpeg.yaml
 group: !include groups.yaml
