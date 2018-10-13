@@ -1,3 +1,4 @@
+auth:
 automation: !include automations.yaml
 binary_sensor: !include_dir_merge_list binary_sensors/
 camera: !include config/cameras.yaml
@@ -11,6 +12,7 @@ homeassistant: !include config/homeassistant.yaml
 homekit: !include config/homekit.yaml
 #homematic: !include config/homematic.yaml
 http: !include config/http.yaml
+influxdb: !include config/influxdb.yaml
 #input_select: !include config/input_select.yaml
 ios:
 light: !include config/light.yaml
@@ -20,6 +22,7 @@ media_player: !include config/media_player.yaml
 mqtt: !include config/mqtt.yaml
 notify: !include notify.yaml
 panel_custom: !include config/panel_custom.yaml
+panel_iframe: !include config/panel_iframe.yaml
 rflink: !include config/rflink.yaml
 rfxtrx: !include config/rfxtrx.yaml
 script: !include_dir_named scripts/
@@ -28,6 +31,7 @@ shell_command: !include config/shell_commands.yaml
 switch: !include_dir_merge_list switches/
 telegram_bot: !include config/telegram_bot.yaml
 vacuum: !include config/vacuum.yaml
+visonic: !include config/visonic.yaml
 weblink: !include weblinks.yaml
 zone: !include zones.yaml
 zwave: !include config/zwave.yaml
@@ -51,14 +55,11 @@ history:
 
 logger:
   default: warning
-  logs:
-    homeassistant.components.http.ban: warning
-
-# log everything to influxdb for historical graphs
-influxdb:
-  host: 127.0.0.1
-  username: home_assistant
-  password: !secret influxdb_password
+#  logs:
+#    custom_components.visonic: debug
+#    custom_components.alarm_control_panel.visonic: critical
+#    custom_components.sensor.visonic: critical
+#    custom_components.pyvisonic: debug
 
 # Track the sun
 sun:
@@ -66,9 +67,3 @@ sun:
 recorder:
   purge_interval: 2
   purge_keep_days: 7
-  
-panel_iframe:
-  nodered:
-    title: 'Node-Red'
-    icon: 'mdi:shuffle-variant'
-    url: 'http://192.168.16.5:1880/'
