@@ -21,10 +21,10 @@ mycroft: !include config/mycroft.yaml
 media_player: !include config/media_player.yaml
 mqtt: !include config/mqtt.yaml
 notify: !include notify.yaml
-panel_custom: !include config/panel_custom.yaml
 panel_iframe: !include config/panel_iframe.yaml
 rflink: !include config/rflink.yaml
 rfxtrx: !include config/rfxtrx.yaml
+scene: !include config/scene.yaml
 script: !include_dir_named scripts/
 sensor: !include_dir_merge_list sensors/
 shell_command: !include config/shell_commands.yaml

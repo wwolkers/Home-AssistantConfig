@@ -1,2 +1,2 @@
-  port: /dev/ttyACM0
-#  /dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_95432313837351C061B2-if00
+#  port: /dev/ttyACM0
+  port: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_95432313837351C061B2-if00

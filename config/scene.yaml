@@ -1,0 +1,9 @@
+  name: Netflix
+  entities:
+    light.woonkamer_lamp:
+      state: true
+      brightness: 30
+    light.lamp_tv:
+      state: true
+      brightness: 30
+    

@@ -1,0 +1,320 @@
+resources:
+  - url: /local/slider-entity-row.js
+    type: js
+
+title: Home
+views:
+  - title: Home
+    cards:
+      - type: entities
+        entities:
+          - device_tracker.iphonewouter
+          - device_tracker.owntracks_iphone_wouter
+          - climate.toon_thermostat
+          - vacuum.stofzuiger
+      - type: entities
+        title: Living Room
+        show_header_toggle: true
+        entities:
+          - type: custom:slider-entity-row
+            entity: light.woonkamer_lamp
+          - type: custom:slider-entity-row
+            entity: light.lamp_tv
+          - switch.lamp_boekenkast_switch
+          - switch.plugwise_lamp_buffetkast
+      - type: entities
+        title: Toilet
+        show_header_toggle: true
+        entities:
+          - switch.lamp_toilet_switch
+          - binary_sensor.toilet_motion_sensor
+          - sensor.toilet_motion_general
+          - sensor.toilet_motion_luminance
+          - sensor.toilet_motion_temperature
+          - sensor.toilet_motion_battery
+      - type: picture-entity
+        title: Wouter
+        entity: camera.wouter
+        camera_image: camera.wouter
+        show_info: true
+        tap_action: dialog
+      - type: picture-entity
+        title: Wouter
+        entity: camera.wouter
+        camera_image: camera.wouter
+        show_info: true
+        tap_action: dialog
+      - type: entities
+        title: links
+        show_header_toggle: true
+        entities:
+          - weblink.plex
+          - weblink.sickrage
+          - weblink.transmission
+          - weblink.aruba
+          - weblink.router
+  - title: Alarm
+    cards:
+      - type: entities
+        title: BeNext Door
+        show_header_toggle: true
+        entities:
+          - sensor.benext_door_sensor_alarm_level
+          - sensor.benext_door_sensor_alarm_type
+          - sensor.benext_door_sensor_temperature
+          - binary_sensor.benext_door_sensor_sensor
+      - type: entities
+        title: Batteries
+        show_header_toggle: true
+        entities:
+          - sensor.oregontemphygro_2c75_bat
+          - sensor.aeotec_dsb05_battery
+          - sensor.benext_dhszwsnmt01_multi_sensor_battery
+          - sensor.benext_door_sensor_battery
+          - sensor.benext_molite_sensor_battery
+          - sensor.toilet_motion_battery
+          - sensor.watersensor_vaatwasser_battery
+          - sensor.watersensor_wasmachine_battery
+  - title: environment
+    cards:
+      - type: entities
+        entities:
+          - fan.mechanische_ventilatie
+      - type: entities
+        title: Temperature
+        show_header_toggle: true
+        entities:
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_apparent_temperature
+          - sensor.vair_sensor_1_temperature
+          - sensor.vair_sensor_2_temperature
+          - sensor.benext_dhszwsnmt01_multi_sensor_temperature
+          - sensor.benext_molite_sensor_temperature
+          - sensor.oregontemphygro_2c75_temp
+          - sensor.toilet_motion_temperature
+      - type: entities
+        title: Humidity
+        show_header_toggle: true
+        entities:
+          - sensor.dark_sky_humidity
+          - sensor.vair_sensor_1_humidity
+          - sensor.vair_sensor_2_humidity
+          - sensor.oregontemphygro_2c75_hum
+      - type: entities
+        title: co2
+        show_header_toggle: true
+        entities:
+          - sensor.vair_sensor_1_co2
+          - sensor.vair_sensor_2_co2
+      - type: entities
+        title: Lux sensors
+        show_header_toggle: true
+        entities:
+          - sensor.aeotec_dsb05_multisensor_luminance
+          - sensor.aeotec_dsb05_multisensor_luminance_2
+          - sensor.bathroom_motion_luminance
+          - sensor.toilet_motion_luminance
+      - type: entities
+        title: Weather
+        show_header_toggle: true
+        entities:
+          - sensor.date__time
+          - sensor.dark_sky_icon
+          - sensor.dark_sky_summary
+          - sun.sun
+          - sensor.dark_sky_cloud_coverage
+          - sensor.dark_sky_dew_point
+          - sensor.dark_sky_ozone
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_precip
+          - sensor.dark_sky_precip_intensity
+          - sensor.dark_sky_pressure
+          - sensor.dark_sky_visibility
+          - sensor.dark_sky_nearest_storm_distance
+          - sensor.dark_sky_wind_bearing
+          - sensor.dark_sky_wind_speed
+  - title: family
+    cards:
+      - type: entities
+        title: Wouter
+        show_header_toggle: true
+        entities:
+          - script.refresh_devices
+          - sensor.wouter_iphone_battery
+  - title: lights
+    cards:
+      - type: entities
+        entities:
+          - light.lamp_gang_beneden_level
+          - switch.lamp_gang_boven_switch
+          - light.lamp_wouter_level
+          - light.lamp_logeerkamer2_level
+          - switch.lamp_toilet_switch
+          - switch.plugwise_lamp_buffetkast
+          - switch.plugwise_mechanische_ventilatie
+          - switch.plugwise_cv
+      - type: entities
+        title: Living Room
+        show_header_toggle: true
+        entities:
+          - light.woonkamer_lamp
+          - light.lamp_tv
+          - switch.lamp_boekenkast_switch
+          - switch.plugwise_lamp_buffetkast
+      - type: entities
+        title: all lights
+        show_header_toggle: true
+        entities:
+          - light.lamp_gang_beneden_level
+          - light.lamp_logeerkamer2_level
+          - light.lamp_tv
+          - light.lamp_wouter_level
+          - light.unknown_node_14_level
+          - light.woonkamer
+          - light.woonkamer_lamp
+      - type: entities
+        title: all switches
+        show_header_toggle: true
+        entities:
+          - switch.fibaro_wall_plug_2_switch
+          - switch.lamp_boekenkast_switch
+          - switch.lamp_gang_boven_switch
+          - switch.lamp_gang_boven_switch_2
+          - switch.lamp_gang_boven_switch_3
+          - switch.lamp_toilet_switch
+          - switch.plugwise_cv
+          - switch.plugwise_keuken
+          - switch.plugwise_koelkast
+          - switch.plugwise_lamp
+          - switch.plugwise_lamp_buffetkast
+          - switch.plugwise_mechanische_ventilatie
+          - switch.plugwise_server
+          - switch.plugwise_tv
+          - switch.plugwise_zonnepaneel_links
+          - switch.plugwise_zonnepaneel_rechts
+          - switch.popp__duwi_zw_zs_3500_plugin_switch_switch
+          - switch.popp__duwi_zw_zs_3500_plugin_switch_switch_2
+          - switch.visonic_alarm_panel
+          - switch.transmission_slowmode
+  - title: media
+    cards:
+      - type: entities
+        title: Yamaha Radio
+        show_header_toggle: true
+        entities:
+          - script.yamaha_radio
+      - type: media-control
+        entity: media_player.braviatv
+      - type: media-control
+        entity: media_player.sony_bravia_tv
+      - type: media-control
+        entity: media_player.yamaha_receiver
+      - type: media-control
+        entity: media_player.spotify
+  - title: HA Controls
+    cards:
+      - type: entities
+        title: Home Assistant Status
+        show_header_toggle: true
+        entities:
+          - sensor.cpu_temperature
+          - sensor.disk_free_home
+          - sensor.last_boot
+      - type: entities
+        title: Speedtest
+        show_header_toggle: true
+        entities:
+          - sensor.speedtest_ping
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+      - type: entities
+        title: FritzBox
+        show_header_toggle: true
+        entities:
+          - sensor.fritz_netmonitor
+      - type: entities
+        title: Qnap
+        show_header_toggle: true
+        entities:
+          - sensor.nas_status
+          - sensor.nas_cpu_usage
+          - sensor.nas_memory_usage
+          - sensor.nas_system_temperature
+          - sensor.nas_network_down_eth0
+          - sensor.nas_network_up_eth0
+          - sensor.nas_smart_status_drive_1
+          - sensor.nas_temperature_drive_1
+          - sensor.nas_smart_status_drive_2
+          - sensor.nas_temperature_drive_2
+          - sensor.nas_smart_status_drive_3
+          - sensor.nas_temperature_drive_3
+          - sensor.nas_smart_status_drive_4
+          - sensor.nas_temperature_drive_4
+          - sensor.nas_volume_used_volume_1
+  - title: Power
+    cards:
+      - type: entities
+        entities:
+          - sensor.plugwise_cv
+          - sensor.plugwise_keuken
+          - sensor.plugwise_koelkast
+          - sensor.plugwise_lamp_buffetkast
+          - sensor.plugwise_mechanische_ventilatie
+          - sensor.plugwise_server
+          - sensor.plugwise_tv
+          - sensor.plugwise_zonnepaneel_links
+          - sensor.plugwise_zonnepaneel_rechts
+  - title: ZWave
+    cards:
+      - type: entities
+        title: Fibaro Wall plug
+        show_header_toggle: true
+        entities:
+          - switch.lamp_boekenkast_switch
+          - sensor.lamp_boekenkast_power
+          - sensor.lamp_boekenkast_energy
+          - sensor.lamp_boekenkast_exporting
+          - switch.fibaro_wall_plug_2_switch
+          - sensor.fibaro_wall_plug_2_power
+          - sensor.fibaro_wall_plug_2_energy
+          - sensor.fibaro_wall_plug_2_exporting
+      - type: entities
+        title: Fibaro dimmer
+        show_header_toggle: true
+        entities:
+          - light.lamp_gang_beneden_level
+      - type: entities
+        title: Aeotec Motion sensor
+        show_header_toggle: true
+        entities:
+          - binary_sensor.aeotec_dsb05_multisensor_sensor
+          - sensor.aeotec_dsb05_multisensor_luminance
+          - sensor.aeotec_dsb05_multisensor_relative_humidity
+          - sensor.aeotec_dsb05_multisensor_temperature
+      - type: entities
+        title: BeNext Door
+        show_header_toggle: true
+        entities:
+          - sensor.benext_door_sensor_alarm_level
+          - sensor.benext_door_sensor_alarm_type
+          - sensor.benext_door_sensor_temperature
+          - binary_sensor.benext_door_sensor_sensor
+      - type: entities
+        title: Lamp Wouter
+        show_header_toggle: true
+        entities:
+          - light.lamp_wouter_level
+      - type: entities
+        title: NeoCool water
+        show_header_toggle: true
+        entities:
+          - binary_sensor.watersensor_wasmachine_sensor
+          - sensor.watersensor_wasmachine_alarm_level
+          - sensor.watersensor_wasmachine_alarm_type
+          - sensor.watersensor_wasmachine_flood
+          - sensor.watersensor_wasmachine_sourcenodeid
+          - binary_sensor.watersensor_vaatwasser_sensor
+          - sensor.watersensor_vaatwasser_alarm_level
+          - sensor.watersensor_vaatwasser_alarm_type
+          - sensor.watersensor_vaatwasser_flood
+          - sensor.watersensor_vaatwasser_sourcenodeid

@@ -1,5 +1,5 @@
   # Uncomment this to add a password (recommended!)
-  api_password: !secret http_api_password
+#  api_password: !secret http_api_password
   trusted_networks:
     - 192.168.16.0/24
 #    - 127.0.0.1/32
