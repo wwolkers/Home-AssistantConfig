@@ -1,6 +1,8 @@
 resources:
   - url: /local/slider-entity-row.js
     type: js
+  - url: /local/custom_ui/weather-card.js
+    type: js
 
 title: Home
 views:
@@ -22,28 +24,53 @@ views:
             entity: light.lamp_tv
           - switch.lamp_boekenkast_switch
           - switch.plugwise_lamp_buffetkast
-      - type: entities
-        title: Toilet
-        show_header_toggle: true
+      - type: glance
+        title: Lights
         entities:
-          - switch.lamp_toilet_switch
+          - entity: switch.lamp_boekenkast_switch
+            name: Box
+            tap_action: toggle
+            hold_action: more-info
+          - entity: switch.plugwise_lamp_buffetkast
+            name: Buffetkast
+            tap_action: toggle
+            hold_action: more-info
+          - entity: light.lamp_tv
+            name: TV
+            tap_action: toggle
+            hold_action: more-info
+          - entity: light.woonkamer_lamp
+            tap_action: toggle
+            hold_action: more-info
+          - entity: light.lamp_gang_beneden_level
+            name: Gang beneden
+            tap_action: toggle
+            hold_action: more-info
+          - entity: switch.lamp_gang_boven_switch
+            name: Gang Boven
+            tap_action: toggle
+            hold_action: more-info
+            icon: mdi:lightbulb
+          - entity: light.lamp_wouter_level
+            name: Wouter
+            tap_action: toggle
+            hold_action: more-info
+          - entity: light.lamp_babykamer_level
+            name: Babykamer
+            tap_action: toggle
+            hold_action: more-info
+            icon: mdi:bed-empty
+          - entity: switch.lamp_toilet_switch
+            name: Toilet
+            tap_action: toggle
+            hold_action: more-info
+            icon: mdi:lightbulb
           - binary_sensor.toilet_motion_sensor
-          - sensor.toilet_motion_general
-          - sensor.toilet_motion_luminance
-          - sensor.toilet_motion_temperature
-          - sensor.toilet_motion_battery
-      - type: picture-entity
-        title: Wouter
-        entity: camera.wouter
-        camera_image: camera.wouter
-        show_info: true
-        tap_action: dialog
-      - type: picture-entity
-        title: Wouter
-        entity: camera.wouter
-        camera_image: camera.wouter
-        show_info: true
-        tap_action: dialog
+          - entity: switch.popp__duwi_zw_zs_3500_plugin_switch_switch
+            name: Schuur
+            tap_action: toggle
+            hold_action: more-info
+            icon: mdi:lightbulb
       - type: entities
         title: links
         show_header_toggle: true
@@ -148,7 +175,7 @@ views:
           - light.lamp_gang_beneden_level
           - switch.lamp_gang_boven_switch
           - light.lamp_wouter_level
-          - light.lamp_logeerkamer2_level
+          - light.lamp_babykamer_level
           - switch.lamp_toilet_switch
           - switch.plugwise_lamp_buffetkast
           - switch.plugwise_mechanische_ventilatie
@@ -166,7 +193,7 @@ views:
         show_header_toggle: true
         entities:
           - light.lamp_gang_beneden_level
-          - light.lamp_logeerkamer2_level
+          - light.lamp_babykamer_level
           - light.lamp_tv
           - light.lamp_wouter_level
           - light.unknown_node_14_level
@@ -304,6 +331,11 @@ views:
         show_header_toggle: true
         entities:
           - light.lamp_wouter_level
+      - type: entities
+        title: Lamp Schuur
+        show_header_toggle: true
+        entities:
+          - switch.Lampjes_Schuur
       - type: entities
         title: NeoCool water
         show_header_toggle: true

@@ -46,14 +46,14 @@
 #  action:
 #    service: homeassistant.turn_off
 #    entity_id: light.lamp_wouter_level
-- id: owntracks_refresh
-  alias: Owntracks Refresh
-  trigger:
-    platform: time
-    minutes: /15
-    seconds: 0
-  action:
-    service: script.refresh_devices
+#- id: owntracks_refresh
+#  alias: Owntracks Refresh
+#  trigger:
+#    platform: time
+#    minutes: /15
+#    seconds: 0
+#  action:
+#    service: script.refresh_devices
 - id: updates
   alias: Update Available Notifications
   trigger:
