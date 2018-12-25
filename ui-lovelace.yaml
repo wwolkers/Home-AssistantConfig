@@ -3,6 +3,10 @@ resources:
     type: js
   - url: /local/custom_ui/weather-card.js
     type: js
+  - url: /local/tracker-card.js?v=0
+    type: js
+  - url: /local/power-wheel-card.js?v=1
+    type: module
 
 title: Home
 views:
@@ -66,7 +70,7 @@ views:
             hold_action: more-info
             icon: mdi:lightbulb
           - binary_sensor.toilet_motion_sensor
-          - entity: switch.popp__duwi_zw_zs_3500_plugin_switch_switch
+          - entity: switch.popp__duwi_zw_zs_3500_plugin_switch_switch_2
             name: Schuur
             tap_action: toggle
             hold_action: more-info
@@ -80,6 +84,11 @@ views:
           - weblink.transmission
           - weblink.aruba
           - weblink.router
+  - title: Home Power
+    cards:
+      - type: "custom:power-wheel-card"
+        solar_power_entity: sensor.solar_power
+        grid_power_entity: sensor.grid_power
   - title: Alarm
     cards:
       - type: entities
@@ -171,35 +180,6 @@ views:
   - title: lights
     cards:
       - type: entities
-        entities:
-          - light.lamp_gang_beneden_level
-          - switch.lamp_gang_boven_switch
-          - light.lamp_wouter_level
-          - light.lamp_babykamer_level
-          - switch.lamp_toilet_switch
-          - switch.plugwise_lamp_buffetkast
-          - switch.plugwise_mechanische_ventilatie
-          - switch.plugwise_cv
-      - type: entities
-        title: Living Room
-        show_header_toggle: true
-        entities:
-          - light.woonkamer_lamp
-          - light.lamp_tv
-          - switch.lamp_boekenkast_switch
-          - switch.plugwise_lamp_buffetkast
-      - type: entities
-        title: all lights
-        show_header_toggle: true
-        entities:
-          - light.lamp_gang_beneden_level
-          - light.lamp_babykamer_level
-          - light.lamp_tv
-          - light.lamp_wouter_level
-          - light.unknown_node_14_level
-          - light.woonkamer
-          - light.woonkamer_lamp
-      - type: entities
         title: all switches
         show_header_toggle: true
         entities:
@@ -240,6 +220,11 @@ views:
         entity: media_player.spotify
   - title: HA Controls
     cards:
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker
       - type: entities
         title: Home Assistant Status
         show_header_toggle: true

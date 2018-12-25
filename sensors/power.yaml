@@ -1,0 +1,10 @@
+  - platform: template
+    sensors:
+      solar_power:
+        friendly_name: 'Solar power production'
+        unit_of_measurement: 'W'
+        value_template: '{{ ((states.sensor.plugwise_zonnepaneel_links.state | float) + (states.sensor.plugwise_zonnepaneel_rechts.state | float)) }}'
+      grid_power:
+        friendly_name: 'Grid power consumption'
+        unit_of_measurement: 'W'
+        value_template: '{{ ((states.sensor.toon_p1_power_use_high.state | float) + (states.sensor.toon_p1_power_use_low.state | float)) }}'

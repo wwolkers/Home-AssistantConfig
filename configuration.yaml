@@ -1,12 +1,14 @@
-auth:
 automation: !include automations.yaml
 binary_sensor: !include_dir_merge_list binary_sensors/
 camera: !include config/cameras.yaml
 climate: !include config/climate.yaml
+custom_updater:
 device_tracker: !include config/device_tracker.yaml
+discovery:
 emulated_hue:
 fan: !include config/fan.yaml
 ffmpeg: !include config/ffmpeg.yaml
+frontend:
 group: !include groups.yaml
 homeassistant: !include config/homeassistant.yaml
 homekit: !include config/homekit.yaml
@@ -21,7 +23,9 @@ mycroft: !include config/mycroft.yaml
 media_player: !include config/media_player.yaml
 mqtt: !include config/mqtt.yaml
 notify: !include notify.yaml
+panel_custom: !include config/panel_custom.yaml
 panel_iframe: !include config/panel_iframe.yaml
+recorder: !include config/recorder.yaml
 rflink: !include config/rflink.yaml
 rfxtrx: !include config/rfxtrx.yaml
 scene: !include config/scene.yaml
@@ -31,39 +35,26 @@ shell_command: !include config/shell_commands.yaml
 switch: !include_dir_merge_list switches/
 telegram_bot: !include config/telegram_bot.yaml
 vacuum: !include config/vacuum.yaml
-#visonic: !include config/visonic.yaml
+visonic: !include config/visonic.yaml
 weblink: !include weblinks.yaml
 zone: !include zones.yaml
 zwave: !include config/zwave.yaml
 
 config:
 
-# Enables the frontend
-frontend:
-
 # Checks for available updates
 updater:
-
-# Discover some devices automatically
-discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
 
 # Enables support for tracking state changes over time.
 history:
 
 logger:
   default: warning
-#  logs:
-#    custom_components.visonic: debug
-#    custom_components.alarm_control_panel.visonic: critical
-#    custom_components.sensor.visonic: critical
-#    custom_components.pyvisonic: debug
+  logs:
+    custom_components.visonic: debug
+    custom_components.alarm_control_panel.visonic: critical
+    custom_components.sensor.visonic: critical
+    custom_components.pyvisonic: debug
 
 # Track the sun
 sun:
-
-recorder:
-  purge_interval: 2
-  purge_keep_days: 7

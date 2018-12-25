@@ -165,7 +165,7 @@ def setup(hass, base_config):
         _LOGGER.error(" ........... attempting reconnection")
         panel_reset_counter = panel_reset_counter + 1
         if connect_to_alarm():
-            discovery.load_platform(hass, "switch", DOMAIN, {}, base_config)
+            discovery.load_platform(hass, "switch", DOMAIN, {}, base_config)   
             discovery.load_platform(hass, "alarm_control_panel", DOMAIN, {}, base_config)   
 
         
@@ -245,8 +245,8 @@ def setup(hass, base_config):
         if success:
             # these 2 calls will create a partition "alarm control panel" and a switch that represents the panel information
             #   eventually there will be an "alarm control panel" for each partition but we only support 1 partition at the moment
-            discovery.load_platform(hass, "switch", DOMAIN, {}, base_config)
-            discovery.load_platform(hass, "alarm_control_panel", DOMAIN, {}, base_config)
+            discovery.load_platform(hass, "switch", DOMAIN, {}, base_config)   
+            discovery.load_platform(hass, "alarm_control_panel", DOMAIN, {}, base_config)   
             return True
         
     except (ConnectTimeout, HTTPError) as ex:
