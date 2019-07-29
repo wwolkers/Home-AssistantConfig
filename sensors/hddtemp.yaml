@@ -1,5 +1,5 @@
 - platform: hddtemp
-  disk:
+  disks:
     - /dev/sda
     - /dev/sdb
     - /dev/sdc

@@ -39,7 +39,7 @@ sensor.dark_sky_wind_bearing:
   icon: mdi:compass
 sensor.dark_sky_apparent_temperature:
   friendly_name: Real Feel
-sensor.date__time:
+sensor.date_time:
   icon: mdi:calendar-clock
 sensor.cpu_use:
   icon: mdi:speedometer
@@ -98,9 +98,8 @@ sensor.oregontemphygro_cc7a_temp:
   friendly_name: Schuur Temperature
 sensor.plugwise_cv:
   friendly_name: Verbruik CV
-switch.lamp_boekenkast_switch:
+switch.lamp_box:
   icon: mdi:lightbulb
-  assumed_state: false
 switch.plugwise_lamp_buffetkast:
   icon: mdi:lightbulb
   assumed_state: false

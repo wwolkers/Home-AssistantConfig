@@ -1,6 +1,0 @@
-- platform: transmission
-  host: 192.168.16.22
-  port: 9091
-  username: !secret transmission_user
-  password: !secret transmission_password
-  name: transmission_slowmode

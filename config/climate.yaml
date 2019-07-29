@@ -1,4 +1,4 @@
-  platform: toon
+  platform: toon_climate
   name: Toon Thermostat
   host: 192.168.16.16
   port: 10080

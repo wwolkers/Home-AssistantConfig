@@ -1,10 +1,13 @@
 automation: !include automations.yaml
 binary_sensor: !include_dir_merge_list binary_sensors/
+#breaking_changes:
 camera: !include config/cameras.yaml
 climate: !include config/climate.yaml
 custom_updater:
 device_tracker: !include config/device_tracker.yaml
 discovery:
+# disabled, need to expose docker socket to HA
+#docker_monitor: !include config/docker_monitor.yaml
 emulated_hue:
 fan: !include config/fan.yaml
 ffmpeg: !include config/ffmpeg.yaml
@@ -25,6 +28,7 @@ mqtt: !include config/mqtt.yaml
 notify: !include notify.yaml
 panel_custom: !include config/panel_custom.yaml
 panel_iframe: !include config/panel_iframe.yaml
+person:
 recorder: !include config/recorder.yaml
 rflink: !include config/rflink.yaml
 rfxtrx: !include config/rfxtrx.yaml
@@ -32,11 +36,15 @@ scene: !include config/scene.yaml
 script: !include_dir_named scripts/
 sensor: !include_dir_merge_list sensors/
 shell_command: !include config/shell_commands.yaml
+ssdp:
 switch: !include_dir_merge_list switches/
+system_health:
 telegram_bot: !include config/telegram_bot.yaml
+utility_meter: !include config/utility_meter.yaml
 vacuum: !include config/vacuum.yaml
-visonic: !include config/visonic.yaml
+#visonic: !include config/visonic.yaml
 weblink: !include weblinks.yaml
+zeroconf:
 zone: !include zones.yaml
 zwave: !include config/zwave.yaml
 
@@ -51,10 +59,12 @@ history:
 logger:
   default: warning
   logs:
-    custom_components.visonic: debug
-    custom_components.alarm_control_panel.visonic: critical
-    custom_components.sensor.visonic: critical
-    custom_components.pyvisonic: debug
+    custom_components.toon_climate: debug
+#    custom_components.visonic.pyvisonic: debug
+#    custom_components.visonic.alarm_control_panel: debug
+#    custom_components.visonic.binary_sensor: debug
+#    custom_components.visonic.switch: debug
+    custom_components.toon_climate.__init__: debug
 
 # Track the sun
 sun:

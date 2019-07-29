@@ -66,7 +66,7 @@
   optimistic : false
   command_topic: 'plugwise2py/cmd/switch/000D6F0000236D2F'
   state_topic: 'plugwise2py/state/circle/000D6F0000236D2F'
-  state_template: '{{ value_json.switch }}'
+  value_template: '{"mac": "000D6F0000236D2F", "cmd": "switch", "val": "{{ value_json.switch }}"}'
   payload_on: '{"mac": "000D6F0000236D2F", "switch": "on"}'
   payload_off: '{"mac": "000D6F0000236D2F", "switch": "off"}'
   retain: true

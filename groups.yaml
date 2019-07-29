@@ -1,21 +1,3 @@
-default_view:
-  view: true
-  name: Home
-  entities:
-  - device_tracker.iphonewouter
-  - device_tracker.owntracks_iphone_wouter
-  - group.alarm_status
-  - group.bathroom
-  - group.bedroom
-  - group.living_room
-  - group.kitchen
-  - group.toilet
-  - climate.toon_thermostat
-  - group.cameras
-  - camera.wouter
-  - camera.woonkamer
-  - vacuum.stofzuiger
-  - group.links
 alarm:
   name: Alarm
   view: true
@@ -107,15 +89,6 @@ zwave:
   - group.benext_door
   - group.lamp_wouter
   - group.neocool_water
-Unknown sensor:
-- binary_sensor.__sensor_6_0
-- binary_sensor.__sensor_9_0
-- switch.popp__duwi_zw_zs_3500_plugin_switch_switch_10_0
-- binary_sensor.__sensor_11_0
-- binary_sensor.__sensor_12_0
-- light.__level_14_0
-- binary_sensor.__sensor_15_0
-- binary_sensor.__sensor_25_0
 Benext sensors:
 - group.benext_motion
 - group.benext_door
@@ -150,11 +123,6 @@ Fibaro dimmer:
 - sensor.lamp_gang_beneden_power
 - sensor.lamp_gang_beneden_previous_reading
 Fibaro Wall plug:
-- switch.lamp_boekenkast_switch
-- sensor.lamp_boekenkast_power
-- sensor.lamp_boekenkast_energy
-- sensor.lamp_boekenkast_exporting
-- sensor.lamp_boekenkast_power
 - switch.fibaro_wall_plug_2_switch
 - sensor.fibaro_wall_plug_2_power
 - sensor.fibaro_wall_plug_2_energy
@@ -209,31 +177,10 @@ Cameras:
 - camera.wouter
 - camera.tuin
 Wouter:
-- script.refresh_devices
-- script.br_finder
-- script.car_finder_ben_notify
-- input_select.ben_status
-- sensor.google_travel_time__driving
-- sensor.car_driving_ben
-- binary_sensor.keys_status
 - sensor.destination_wouter
 - sensor.eta_wouter
 - sensor.wouter_iphone_battery
 - sensor.phone_batt_wouter
-Global:
-- script.all_off
-- script.all_on
-- script.sexy_time
-- script.prayer_time
-- script.party_time
-- script.party_over
-- script.media_playing_night
-- script.media_stopped_night
-- scene.startup
-- scene.shutdown
-- scene.night_time
-- input_select.lullaby
-- script.IFTTT
 Home Assistant Status:
 - sensor.cpu_temperature
 - sensor.cpu_use
@@ -268,8 +215,6 @@ Humidity:
 - sensor.oregontemphygro_2cec_hum
 - sensor.oregontemphygro_2ccc_hum
 - sensor.oregontemphygro_2c75_hum
-Kitchen:
-- switch.kitchen_outlet
 Lux sensors:
 - sensor.fibaro_multisensor_motion_sensor_luminance
 - sensor.vair_sensor_1_light
@@ -278,10 +223,6 @@ Lux sensors:
 - sensor.aeotec_dsb05_multisensor_luminance_2
 - sensor.bathroom_motion_luminance
 - sensor.toilet_motion_luminance
-Speedtest:
-- sensor.speedtest_ping
-- sensor.speedtest_download
-- sensor.speedtest_upload
 Fritznetmonitor:
   name: FritzBox
   entities:
@@ -295,7 +236,7 @@ Fritznetmonitor:
 Living Room:
 - light.woonkamer_lamp
 - light.lamp_tv
-- switch.lamp_boekenkast_switch
+- switch.lamp_box
 - switch.plugwise_lamp_buffetkast
 Toilet:
 - switch.lamp_toilet_switch
@@ -319,7 +260,6 @@ Devices:
 - media_player.spotify
 - media_player.plex_web_chrome
 Weather:
-- sensor.date__time
 - sensor.dark_sky_icon
 - sensor.dark_sky_condition
 - sensor.dark_sky_summary

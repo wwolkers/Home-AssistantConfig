@@ -1,11 +1,13 @@
-  name: Home
-  latitude: 52.357958
-  longitude: 4.780472
-  elevation: 0
-  unit_system: metric
-  time_zone: Europe/Amsterdam
+#  name: Home
+#  latitude: 52.357958
+#  longitude: 4.780472
+#  elevation: 0
+#  unit_system: metric
+#  time_zone: Europe/Amsterdam
   customize: !include customize.yaml
   auth_providers:
     - type: homeassistant
     - type: trusted_networks
+      trusted_networks:
+        - 192.168.16.0/24
 #    - type: legacy_api_password
