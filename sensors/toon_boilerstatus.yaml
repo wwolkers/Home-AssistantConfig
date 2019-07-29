@@ -1,0 +1,12 @@
+  - platform: toon_boilerstatus
+    host: 192.168.16.16
+    port: 10080
+    scan_interval: 10
+    resources:
+      - boilersetpoint
+      - boilerintemp
+      - boilerouttemp
+      - boilerpressure
+      - boilermodulationlevel
+      - roomtemp
+      - roomtempsetpoint

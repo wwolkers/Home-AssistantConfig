@@ -1,0 +1,11 @@
+  containers:
+    - homeassistant
+    - hassio_supervisor
+    - addon_a0d7b954_nodered
+    - addon_a0d7b954_adb
+  monitored_conditions:
+    - utilization_version
+    - container_status
+    - container_memory_usage
+    - container_memory_percentage_usage
+    - container_cpu_percentage_usage

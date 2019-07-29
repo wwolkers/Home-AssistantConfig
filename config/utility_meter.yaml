@@ -1,0 +1,45 @@
+  daily_power_use_low:
+    source: sensor.toon_p1_power_use_cnt_low
+    cycle: daily
+  daily_power_use_high:
+    source: sensor.toon_p1_power_use_cnt_high
+    cycle: daily
+  daily_power_prod_low:
+    source: sensor.toon_p1_power_prod_cnt_low
+    cycle: daily
+  daily_power_prod_high:
+    source: sensor.toon_p1_power_prod_cnt_high
+    cycle: daily
+  daily_gas:
+    source:  sensor.toon_gas_used_cnt
+    cycle: daily
+  weekly_power_use_low:
+    source: sensor.toon_p1_power_use_cnt_low
+    cycle: weekly
+  weekly_power_use_high:
+    source: sensor.toon_p1_power_use_cnt_high
+    cycle: weekly
+  weekly_power_prod_low:
+    source: sensor.toon_p1_power_prod_cnt_low
+    cycle: weekly
+  weekly_power_prod_high:
+    source: sensor.toon_p1_power_prod_cnt_high
+    cycle: weekly
+  weekly_gas:
+    source:  sensor.toon_gas_used_cnt
+    cycle: weekly
+  monthly_power_low:
+    source: sensor.toon_p1_power_use_cnt_low
+    cycle: monthly
+  monthly_power_high:
+    source: sensor.toon_p1_power_use_cnt_high
+    cycle: monthly
+  monthly_power_prod_low:
+    source: sensor.toon_p1_power_prod_cnt_low
+    cycle: monthly
+  monthly_power_prod_high:
+    source: sensor.toon_p1_power_prod_cnt_high
+    cycle: monthly
+  monthly_gas:
+    source:  sensor.toon_gas_used_cnt
+    cycle: monthly
