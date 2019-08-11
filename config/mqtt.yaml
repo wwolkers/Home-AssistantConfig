@@ -2,7 +2,8 @@
   port: 1883
   client_id: home-assistant-1
   discovery: true
-  discovery_prefix: homeassistant
+# Removed prefix, sinze zigbee2mqtt post in zigbee2mqtt
+#  discovery_prefix: homeassistant
 #  keepalive: 60
 #  protocol: 3.1
   birth_message:

@@ -18,7 +18,7 @@ homekit: !include config/homekit.yaml
 #homematic: !include config/homematic.yaml
 http: !include config/http.yaml
 influxdb: !include config/influxdb.yaml
-#input_select: !include config/input_select.yaml
+input_select: !include config/input_select.yaml
 ios:
 light: !include config/light.yaml
 logbook: !include config/logbook.yaml
@@ -58,13 +58,13 @@ history:
 
 logger:
   default: warning
-  logs:
-    custom_components.toon_climate: debug
+#  logs:
+#    custom_components.toon_climate: debug
 #    custom_components.visonic.pyvisonic: debug
 #    custom_components.visonic.alarm_control_panel: debug
 #    custom_components.visonic.binary_sensor: debug
 #    custom_components.visonic.switch: debug
-    custom_components.toon_climate.__init__: debug
+#    custom_components.toon_climate.__init__: debug
 
 # Track the sun
 sun:

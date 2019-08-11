@@ -1,9 +1,25 @@
   yamaha_radio_station:
-    name: 'Select Radio Station:'
-      options:
-        - Fresh FM 95.7
-        - RNE - Radio 3
-        - Radio Veronica
-        - NPO 3FM
-        - Sky Radio 101 FM
-        - SubLime FM 90.7
+    name: Select Radio Station
+    options:
+      - Fresh FM 95.7
+      - RNE - Radio 3
+      - Radio Veronica
+      - NPO 3FM
+      - Sky Radio 101 FM
+      - SubLime FM 90.7
+  dishwasher_status:
+    name: Dishwasher Status
+    options:
+      - Dirty
+      - Running
+      - Drying
+      - Clean
+    initial: Dirty
+  washing_machine_status:
+    name: Washing Machine Status
+    options:
+      - Idle
+      - Running
+      - Finishing
+      - Clean
+    initial: Idle

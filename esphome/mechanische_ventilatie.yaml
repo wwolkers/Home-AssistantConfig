@@ -1,0 +1,49 @@
+esphome:
+  name: mechanische_ventilatie
+  platform: ESP32
+  board: esp-wrover-kit
+  includes:
+    - custom_fan.h
+
+wifi:
+  ssid: "Thuis"
+  password: "draadloos"
+
+# Enable logging
+logger:
+
+web_server:
+
+# Enable Home Assistant API
+api:
+  password: "eSx9$pDH"
+
+ota:
+  password: "eSx9$pDH"
+  
+mqtt:
+  broker: 192.168.16.5
+  username: mv
+  password: esphomemv
+
+output:
+  - platform: custom
+    type: float 
+    lambda: |-
+      auto my_custom_fan_output = new MyCustomFanoutput();
+      App.register_component(my_custom_fan_output);
+      return {my_custom_fan_output};
+
+    outputs:
+      id: my_custom_fan
+
+fan:
+  - platform: speed
+    output: my_custom_fan
+    name: "Mechanische Ventilatie"
+    command_topic: "esphome/mechanische_ventilatie/commands"
+#    speed_command_topic: "esp/mv"
+#    speed_state_topic: 'mechanische_ventilatie/on/state'
+    state_topic: 'mechanische_ventilatie/on/state'
+#    payload_on: '{"mac": "000D6F00002369B9", "cmd": "switch", "val": "on"}'
+#    payload_off: '{"mac": "000D6F00002369B9", "cmd": "switch", "val": "off"}'

@@ -1,2 +1,4 @@
 zwave.popp_duwi_zw_zs_3500_plugin_switch_2:
   node_name: Lampjes Schuur
+person.wouter:
+  entity_picture: "/local/wouter.jpg"
