@@ -10,3 +10,20 @@
       - boilermodulationlevel
       - roomtemp
       - roomtempsetpoint
+  - platform: template
+    sensors:
+      toon_burner_info:
+        friendly_name: 'Ketel Driewegklep'
+        value_template: >-
+          {% if is_state_attr('climate.toon','burner_info', 0) %}
+            Neutraal
+          {% elif is_state_attr('climate.toon','burner_info', 1) %}
+            CV
+          {% elif is_state_attr('climate.toon','burner_info', 2) %}
+            Warm Water
+          {% else %}
+            Onbekend
+          {% endif %}
+      toon_modulation_level:
+        friendly_name: 'Brander Modulatie'
+        value_template: "{{ states.climate.toon.attributes.modulation_level }}"

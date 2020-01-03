@@ -1,0 +1,9 @@
+{
+  "domain": "visonic",
+  "name": "Visonic Intruder Alarm - PowerMax and PowerMaster Series",
+  "documentation": "https://github.com/davesmeghead/visonic/wiki",
+  "dependencies": [],
+  "codeowners": ["@davesmeghead"],
+  "requirements": ["pyserial", "pyserial_asyncio", "datetime"],
+  "homeassistant": "0.103.0"
+}
