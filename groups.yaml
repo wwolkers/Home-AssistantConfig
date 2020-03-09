@@ -34,7 +34,7 @@ lights:
   - group.bedroom
   - group.living_room
   - group.kitchen
-  - group.all_lights
+#  - group.all_lights
   - light.lamp_gang_beneden_level
   - switch.lamp_gang_boven_switch
   - light.lamp_wouter_level
@@ -43,7 +43,7 @@ lights:
   - switch.plugwise_lamp_buffetkast
   - switch.plugwise_mechanische_ventilatie
   - switch.plugwise_cv
-  - group.all_switches
+#  - group.all_switches
 yamaha_radio:
   name: Yamaha Radio
   entities:
@@ -257,7 +257,6 @@ Devices:
 - media_player.braviatv_2
 - media_player.sony_bravia_tv
 - media_player.yamaha_receiver
-- media_player.spotify
 - media_player.plex_web_chrome
 Weather:
 - sensor.dark_sky_icon

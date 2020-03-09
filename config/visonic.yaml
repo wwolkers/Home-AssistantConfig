@@ -8,5 +8,9 @@
   sync_time: 'yes'
   allow_remote_arm: 'yes'
   allow_remote_disarm: 'yes'
+  exclude_x10: [1]
+  b0_enable_motion_processing: 'yes'
+  b0_min_time_between_triggers: 30
+  b0_max_time_for_trigger_event: 5
 #  override_code: '1234'
 #  arm_without_usercode: 'yes'

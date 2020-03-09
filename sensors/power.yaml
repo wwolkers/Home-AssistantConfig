@@ -4,7 +4,11 @@
         friendly_name: 'Solar power production'
         unit_of_measurement: 'W'
         value_template: '{{ ((states.sensor.plugwise_zonnepaneel_links.state | float) + (states.sensor.plugwise_zonnepaneel_rechts.state | float)) }}'
-      grid_power:
+      current_grid_power_consump:
         friendly_name: 'Grid power consumption'
         unit_of_measurement: 'W'
         value_template: '{{ ((states.sensor.toon_p1_power_use_high.state | float) + (states.sensor.toon_p1_power_use_low.state | float)) }}'
+      current_grid_power_prod:
+        friendly_name: 'Grid power production'
+        unit_of_measurement: 'W'
+        value_template: '{{ ((states.sensor.toon_p1_power_prod_high.state | float) + (states.sensor.toon_p1_power_prod_low.state | float)) }}'

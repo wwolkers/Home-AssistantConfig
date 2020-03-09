@@ -28,3 +28,4 @@ ip_bans.yaml
 __pycache__/
 *.py[cod]
 homebdirge/
+custom_components/

@@ -1,18 +1,75 @@
-
-# When we detect power being drawn from the dishwasher,
-# mark the dishwasher as using power
-
 - alias: Set dishwasher active when power detected
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.dishwasher_power
-      above: 10
+  - platform: numeric_state
+    entity_id: sensor.dishwasher_power
+    above: 10
   condition:
     condition: or
     conditions:
-      - condition: state
-        entity_id: input_select.dishwasher_status
-        state: Dirty
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Dirty
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Clean
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Drying
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Running
+  id: 46718cce959b479489bd42ae5a375d0f
+- alias: Set dishwasher drying when power drops
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.aeotec_smart_energy_switch_power_16_8
+    below: 10
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Running
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Drying
+  id: 7a150da3ca6b4ad99afae125ca1395ee
+- alias: Set dishwasher clean
+  trigger:
+  - platform: state
+    entity_id: input_select.dishwasher_status
+    to: Drying
+    for:
+      minutes: 15
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Drying
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Clean
+  id: 89526ed06be14bfb9737c397b8195817
+- alias: Set Dishwasher dirty when power off
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.aeotec_smart_energy_switch_power_16_8
+    below: 1
+  condition:
+    condition: and
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.aeotec_smart_energy_switch_power_16_8
+      below: 1
+    - condition: or
+      conditions:
       - condition: state
         entity_id: input_select.dishwasher_status
         state: Clean
@@ -20,82 +77,11 @@
         entity_id: input_select.dishwasher_status
         state: Drying
   action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.dishwasher_status
-        option: Running
-
-# When the power level drops below 10, and the Dishwasher is set to
-# the 'Running' state, mark the Dishwasher as Finished
-
-- alias: Set dishwasher drying when power drops
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.aeotec_smart_energy_switch_power_16_8
-      below: 10
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.dishwasher_status
-        state: Running
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.dishwasher_status
-        option: Drying
-
-# Once the dishwasher status has been 'Drying' for 30 minutes, mark the
-# dishwasher as clean
-
-- alias: Set dishwasher clean
-  trigger:
-    - platform: state
+  - service: input_select.select_option
+    data:
       entity_id: input_select.dishwasher_status
-      to: Drying
-      for:
-        minutes: 15
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.dishwasher_status
-        state: Drying
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.dishwasher_status
-        option: Clean
-
-# When the power drops and the dishwasher is Clean or Drying, someone has
-# turned the Dishwasher off and emptied it. We should do this when the state
-# of the Dishwasher is clean or Finishing, just incase someone opens the
-# Dishwasher before the 30 minute timeout has been reached.
-
-- alias: Set Dishwasher dirty when power off
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.aeotec_smart_energy_switch_power_16_8
-      below: 1
-  condition:
-    condition: and
-    conditions:
-      - condition: numeric_state
-        entity_id: sensor.aeotec_smart_energy_switch_power_16_8
-        below: 1
-      - condition: or
-        conditions:
-        - condition: state
-          entity_id: input_select.dishwasher_status
-          state: Clean
-        - condition: state
-          entity_id: input_select.dishwasher_status
-          state: Drying
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.dishwasher_status
-        option: Dirty
+      option: Dirty
+  id: c0bd66504b4f418280017b196895abfc
 - id: livingroomlightson
   alias: Living room lights on 45 mins before sunset
   trigger:
@@ -116,9 +102,38 @@
 - id: updates
   alias: Update Available Notifications
   trigger:
-  - entity_id: updater.updater
+  - entity_id: binary_sensor.updater
+    from: 'off'
     platform: state
+    to: 'on'
   action:
   - data:
       message: Home Assistant {{ states.updater.updater.state }} is now available.
     service: notify.telegram
+- id: '1568891310321'
+  alias: Flic1 click
+  trigger:
+  - event_data:
+      button_name: flic1
+      click_type: click
+    event_type: flic
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: light.woonkamer
+    service: light.toggle
+- alias: Alarm Panel Triggered Action
+  initial_state: true
+  trigger:
+    platform: event
+    event_type: alarm_panel_state_update
+    event_data:
+      condition: 3
+  action:
+    service_template: persistent_notification.create
+    data_template:
+      title: Alarm detected
+      message: 'Sensor that triggered this alarm was: {% set ety = trigger.event.data[''Entity'']|string
+        %} {% if ety == ''None'' %} Undefined {% else %} {{ ety }} with the friendly
+        name {{ state_attr(ety, ''friendly_name'') }} {% endif %} '

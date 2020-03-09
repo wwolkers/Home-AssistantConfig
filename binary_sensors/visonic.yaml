@@ -1,0 +1,11 @@
+- platform: template
+  scan_interval: 5
+  sensors:
+    visonic_siren_active:
+      value_template: >-
+        {{ state_attr('alarm_control_panel.visonic_alarm', 'Panel Siren Active')  == "Yes"}}
+      friendly_name: 'Siren' 
+    visonic_panel_ready:
+      value_template: >-
+        {{ state_attr('alarm_control_panel.visonic_alarm', 'Panel Ready') == "Yes" }}
+      friendly_name: 'Panel Ready' 

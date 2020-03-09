@@ -1,0 +1,32 @@
+  - platform: template
+    sensors:
+      daily_power_prod:
+        friendly_name: Daily Power Production
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.daily_power_prod_low')|float +
+states('sensor.daily_power_prod_high')|float }}"
+      monthly_power_prod:
+        friendly_name: Monthly Power Production
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.monthly_power_prod_low')|float +
+states('sensor.monthly_power_prod_high')|float }}"
+      daily_power_use:
+        friendly_name: Daily Power Usage
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.daily_power_use_low')|float +
+states('sensor.daily_power_use_high')|float }}"
+      monthly_power_use:
+        friendly_name: Monthly Power Usave
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.monthly_power_low')|float +
+states('sensor.monthly_power_high')|float }}"
+      daily_solar_power_prod:
+        friendly_name: Daily Solar Power Production
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.daily_power_prod_low')|float +
+states('sensor.daily_power_prod_high')|float }}"
+      monthly_solar_power_prod:
+        friendly_name: Monthly Solar Power Production
+        unit_of_measurement: kWh
+        value_template: "{{ states('sensor.monthly_power_prod_low')|float +
+states('sensor.monthly_power_prod_high')|float }}"

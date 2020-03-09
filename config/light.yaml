@@ -2,3 +2,17 @@
     automatic_add: true
   - platform: hue
     host: 192.168.16.26
+  - platform: switch
+    name: Lamp Box
+    entity_id: switch.lamp_box
+  - platform: switch
+    name: Lamp Buffetkast
+    entity_id: switch.lamp_buffetkast
+  - platform: group
+    name: Living Room
+    entities:
+      - light.woonkamer_lamp
+      - light.lamp_tv
+      - light.lamp_box
+      - light.lamp_buffetkast
+    

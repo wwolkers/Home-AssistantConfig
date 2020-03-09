@@ -1,0 +1,5 @@
+- platform: wirelesstag
+  monitored_conditions:
+    - temperature
+    - humidity
+    - moisture

@@ -1,9 +1,0 @@
-  sequence:
-  - service: mqtt.publish
-    data:
-      topic: "owntracks/owntracks/iPhone Wouter/cmd"
-      payload_template: '{"_type":"cmd","action":"reportLocation"}'
-#  - service: mqtt.publish
-#    data:
-#      topic: "owntracks/cailin6p/cailin6p/cmd"
-#      payload_template: '{"_type":"cmd","action":"reportLocation"}'
